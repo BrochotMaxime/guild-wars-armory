@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This roadmap provides a high-level overview of the development of Guild Wars Armor Planner.
+This roadmap provides a high-level overview of the development of Guild Wars Armory.
 
 Detailed tasks and implementation progress are managed through GitHub Issues and Milestones.
 

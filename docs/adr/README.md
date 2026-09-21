@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Architecture Decision Records (ADRs) document important technical decisions made during the development of Guild Wars Armor Planner.
+Architecture Decision Records (ADRs) document important technical decisions made during the development of Guild Wars Armory.
 
 They provide context about why a decision was made and help keep the project's technical choices understandable over time.
 

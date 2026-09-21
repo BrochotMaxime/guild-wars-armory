@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the initial data model of Guild Wars Armor Planner.
+This document defines the initial data model of Guild Wars Armory.
 
 The V1 uses local static data without a backend or database.
 

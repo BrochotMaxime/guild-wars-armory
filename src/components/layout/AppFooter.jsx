@@ -6,7 +6,7 @@ function AppFooter() {
       <div className="app-footer__content">
         <div className="app-footer__project">
           <p>
-            © {currentYear} <strong>Guild Wars Armor Planner</strong>
+            © {currentYear} <strong>Guild Wars Armory</strong>
           </p>
 
           <p>Fan-made armor planning tool.</p>
