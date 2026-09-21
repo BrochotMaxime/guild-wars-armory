@@ -69,6 +69,10 @@ npm run dev
 
 ## Testing
 
+The project uses Vitest for unit and integration testing.
+
+### Unit tests
+
 Unit tests cover the core armor-planning calculations, including:
 
 - Missing material calculations
@@ -79,6 +83,16 @@ Unit tests cover the core armor-planning calculations, including:
 - Common material aggregation
 - Rare material grouping and ordering
 - Additional crafting costs
+
+### Integration tests
+
+Integration tests use React Testing Library, `user-event`, and `jsdom` to cover the main application workflow:
+
+- Initial workflow state
+- Profession, campaign, and armor selection
+- Armor filtering and details display
+- Reset behavior when changing profession or campaign
+- Complete reset from the home breadcrumb
 
 Run the tests in watch mode while developing:
 
