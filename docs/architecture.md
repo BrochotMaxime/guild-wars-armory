@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the main architectural principles of Guild Wars Armor Planner.
+This document defines the main architectural principles of Guild Wars Armory.
 
 The architecture should remain simple, readable, and appropriate for the scope of the V1.
 
@@ -98,7 +98,7 @@ No additional state management library is required unless the application's comp
 
 ## External Resources
 
-Guild Wars Armor Planner complements rather than replaces the Guild Wars Wiki.
+Guild Wars Armory complements rather than replaces the Guild Wars Wiki.
 
 The application focuses on:
 

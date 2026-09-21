@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-Guild Wars Armor Planner requires data about professions, campaigns, armor sets, materials, crafting recipes, and acquisition methods.
+Guild Wars Armory requires data about professions, campaigns, armor sets, materials, crafting recipes, and acquisition methods.
 
 This data is relatively stable and does not require user-generated content or server-side processing in the V1.
 

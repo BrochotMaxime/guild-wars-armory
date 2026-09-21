@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the main user workflow and business rules of Guild Wars Armor Planner V1.
+This document defines the main user workflow and business rules of Guild Wars Armory V1.
 
 The application follows three main stages:
 

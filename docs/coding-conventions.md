@@ -2,7 +2,7 @@
 
 ## Purpose
 
-These conventions define the initial coding standards for Guild Wars Armor Planner.
+These conventions define the initial coding standards for Guild Wars Armory.
 
 The goal is to keep the codebase readable, consistent, and maintainable without introducing unnecessary complexity.
 

@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Guild Wars Armor Planner is a lightweight web application designed to help Guild Wars players plan the acquisition of an armor set.
+Guild Wars Armory is a lightweight web application designed to help Guild Wars players plan the acquisition of an armor set.
 
 The application focuses on a simple workflow:
 
@@ -26,7 +26,7 @@ However, players still need to manually determine:
 - how much additional material is required when crafting rare materials;
 - which acquisition methods remain relevant when playing Melandru's Accord.
 
-Guild Wars Armor Planner aims to simplify this planning process.
+Guild Wars Armory aims to simplify this planning process.
 
 ## Target Users
 
