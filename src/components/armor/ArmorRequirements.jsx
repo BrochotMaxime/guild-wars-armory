@@ -31,9 +31,11 @@ function ArmorRequirements({ armor, materials, onMaterialClick, onPlanArmor }) {
     );
   }
 
+  const titleId = `armor-requirements-${armor.id}-title`;
+
   return (
-    <section className="armor-requirements">
-      <h3>Requirements</h3>
+    <section className="armor-requirements" aria-labelledby={titleId}>
+      <h3 id={titleId}>Requirements</h3>
 
       <p className="armor-requirements__gold">
         Cost:{" "}
@@ -46,9 +48,9 @@ function ArmorRequirements({ armor, materials, onMaterialClick, onPlanArmor }) {
         <div className="armor-requirements__group">
           <h4>Common materials</h4>
 
-          <div className="material-list">
+          <ul className="material-list">
             {commonMaterials.map(renderMaterial)}
-          </div>
+          </ul>
         </div>
       )}
 
@@ -56,9 +58,7 @@ function ArmorRequirements({ armor, materials, onMaterialClick, onPlanArmor }) {
         <div className="armor-requirements__group">
           <h4>Rare materials</h4>
 
-          <div className="material-list">
-            {rareMaterials.map(renderMaterial)}
-          </div>
+          <ul className="material-list">{rareMaterials.map(renderMaterial)}</ul>
         </div>
       )}
 

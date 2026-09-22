@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
@@ -24,6 +24,17 @@ async function selectDeldrimorArmor(user) {
       name: /deldrimor armor/i,
     }),
   );
+}
+
+async function tabToElement(user, element, maximumTabs = 30) {
+  let tabCount = 0;
+
+  while (document.activeElement !== element && tabCount < maximumTabs) {
+    await user.tab();
+    tabCount += 1;
+  }
+
+  expect(element).toHaveFocus();
 }
 
 describe("App workflow", () => {
@@ -283,5 +294,86 @@ describe("App workflow", () => {
         name: "Deldrimor Armor",
       }),
     ).not.toBeInTheDocument();
+  });
+
+  it("moves focus to the main content without keeping the URL fragment", async () => {
+    const user = userEvent.setup();
+
+    window.history.replaceState(null, "", "/#main-content");
+
+    render(<App />);
+
+    expect(window.location.hash).toBe("");
+
+    const skipLink = screen.getByRole("link", {
+      name: /skip to main content/i,
+    });
+
+    await user.tab();
+
+    expect(skipLink).toHaveFocus();
+
+    await user.keyboard("{Enter}");
+
+    expect(screen.getByRole("main")).toHaveFocus();
+
+    expect(window.location.hash).toBe("");
+  });
+
+  it("supports the main selection workflow using only the keyboard", async () => {
+    const user = userEvent.setup();
+
+    render(<App />);
+
+    const warriorButton = screen.getByRole("button", {
+      name: /warrior/i,
+    });
+
+    await tabToElement(user, warriorButton);
+    await user.keyboard("{Enter}");
+
+    const campaignTrigger = screen.getByRole("button", {
+      name: /^campaign/i,
+    });
+
+    await waitFor(() => {
+      expect(campaignTrigger).toHaveFocus();
+    });
+
+    const eyeOfTheNorthButton = screen.getByRole("button", {
+      name: /eye of the north/i,
+    });
+
+    await tabToElement(user, eyeOfTheNorthButton);
+    await user.keyboard(" ");
+
+    const armorTrigger = screen.getByRole("button", {
+      name: /^armor/i,
+    });
+
+    await waitFor(() => {
+      expect(armorTrigger).toHaveFocus();
+    });
+
+    const deldrimorArmorButton = screen.getByRole("button", {
+      name: /deldrimor armor/i,
+    });
+
+    await tabToElement(user, deldrimorArmorButton);
+    await user.keyboard("{Enter}");
+
+    const armorDetails = await screen.findByRole("region", {
+      name: "Deldrimor Armor",
+    });
+
+    await waitFor(() => {
+      expect(armorDetails).toHaveFocus();
+    });
+
+    expect(
+      screen.getByRole("heading", {
+        name: "Requirements",
+      }),
+    ).toBeVisible();
   });
 });

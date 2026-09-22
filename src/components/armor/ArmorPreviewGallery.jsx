@@ -18,6 +18,7 @@ function ArmorPreviewGallery({ armor }) {
     <div className="armor-preview-gallery">
       <div
         className="armor-preview-gallery__controls"
+        role="group"
         aria-label="Choose armor preview"
       >
         {armorPreviews.map(({ gender, label }) => {
@@ -55,7 +56,7 @@ function ArmorPreviewGallery({ armor }) {
                 {image ? (
                   <img
                     src={image}
-                    alt={`${armor.name} ${gender} armor`}
+                    alt={`${armor.name}, ${label.toLowerCase()} preview`}
                     loading="lazy"
                     decoding="async"
                   />

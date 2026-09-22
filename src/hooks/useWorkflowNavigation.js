@@ -7,6 +7,17 @@ function useWorkflowNavigation(initialStep) {
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
 
+  function focusTarget(target) {
+    const targetControl =
+      target.querySelector(".workflow-panel__trigger") ?? target;
+
+    if (typeof targetControl.focus === "function") {
+      targetControl.focus({
+        preventScroll: true,
+      });
+    }
+  }
+
   function scrollToElement(targetId, nextActiveStep = activeStep) {
     const shouldWaitForTransition = activeStep !== nextActiveStep;
     const shouldReduceMotion = prefersReducedMotion();
@@ -35,6 +46,8 @@ function useWorkflowNavigation(initialStep) {
           top: targetPosition,
           behavior: shouldReduceMotion ? "auto" : "smooth",
         });
+
+        focusTarget(target);
       }
 
       if (!shouldWaitForTransition || shouldReduceMotion) {
@@ -87,6 +100,14 @@ function useWorkflowNavigation(initialStep) {
     window.scrollTo({
       top: 0,
       behavior: prefersReducedMotion() ? "auto" : "smooth",
+    });
+
+    window.requestAnimationFrame(() => {
+      const initialPanel = document.getElementById(`${initialStep}-step`);
+
+      if (initialPanel) {
+        focusTarget(initialPanel);
+      }
     });
   }
 

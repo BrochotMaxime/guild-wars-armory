@@ -2,6 +2,9 @@
 
 .material-list {
   display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   overflow: hidden;
   background-color: $color-surface;
   border: 1px solid rgba($color-interface-border, 0.7);

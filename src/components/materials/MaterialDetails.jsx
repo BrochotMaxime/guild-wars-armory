@@ -17,6 +17,7 @@ function MaterialDetails({
 
   useEffect(() => {
     const dialog = dialogRef.current;
+    const previouslyFocusedElement = document.activeElement;
     const previousOverflow = document.body.style.overflow;
 
     if (dialog && !dialog.open) {
@@ -26,7 +27,18 @@ function MaterialDetails({
     document.body.style.overflow = "hidden";
 
     return () => {
+      if (dialog?.open) {
+        dialog.close();
+      }
+
       document.body.style.overflow = previousOverflow;
+
+      if (
+        previouslyFocusedElement instanceof HTMLElement &&
+        previouslyFocusedElement.isConnected
+      ) {
+        previouslyFocusedElement.focus();
+      }
     };
   }, [material]);
 
@@ -54,12 +66,14 @@ function MaterialDetails({
   }
 
   const titleId = `material-details-${material.id}-title`;
+  const descriptionId = `material-details-${material.id}-description`;
 
   return (
     <dialog
       ref={dialogRef}
       className="material-details-modal"
       aria-labelledby={titleId}
+      aria-describedby={descriptionId}
       onClick={handleBackdropClick}
       onCancel={handleCancel}
     >
@@ -71,7 +85,7 @@ function MaterialDetails({
             <div>
               <h3 id={titleId}>{material.name}</h3>
 
-              <p className="material-details__type">
+              <p id={descriptionId} className="material-details__type">
                 {material.type === "rare" ? "Rare material" : "Common material"}
               </p>
             </div>
@@ -80,7 +94,7 @@ function MaterialDetails({
           <button
             type="button"
             className="material-details__close"
-            aria-label="Close material details"
+            aria-label={`Close details for ${material.name}`}
             onClick={handleClose}
             autoFocus
           >
@@ -126,6 +140,7 @@ function MaterialDetails({
           href={material.wikiUrl}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`View ${material.name} on Guild Wars Wiki — opens in a new tab`}
         >
           View on Guild Wars Wiki
         </a>

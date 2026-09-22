@@ -31,7 +31,7 @@ function ArmorPlannerRow({ row, onInventoryChange, onCraftingToggle }) {
 
   return (
     <tr>
-      <td>
+      <th scope="row">
         <div
           className="armor-planner__material"
           style={{ "--material-depth": depth }}
@@ -45,11 +45,14 @@ function ArmorPlannerRow({ row, onInventoryChange, onCraftingToggle }) {
                 checked={isCrafting}
                 onChange={() => onCraftingToggle(material.id)}
               />
-              Craft missing
+
+              <span>Craft missing</span>
+
+              <span className="visually-hidden"> {material.name}</span>
             </label>
           )}
         </div>
-      </td>
+      </th>
 
       <td>{renderNeed()}</td>
 
@@ -59,7 +62,7 @@ function ArmorPlannerRow({ row, onInventoryChange, onCraftingToggle }) {
           min="0"
           step="1"
           value={inventoryValue}
-          aria-label={`Owned ${material.name}`}
+          aria-label={`Owned quantity for ${material.name}`}
           onChange={(event) =>
             onInventoryChange(material.id, event.target.value)
           }

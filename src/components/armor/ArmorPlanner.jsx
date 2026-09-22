@@ -81,25 +81,34 @@ function ArmorPlanner({
     );
   }
 
+  const titleId = "armor-planner-title";
+
   return (
-    <section id="armor-planner" className="armor-planner">
-      <h3>Armor planner</h3>
+    <section
+      id="armor-planner"
+      className="armor-planner"
+      aria-labelledby={titleId}
+      tabIndex={-1}
+    >
+      <h3 id={titleId}>Armor planner</h3>
 
       <div className="armor-planner__table-wrapper">
-        <table>
+        <table aria-label="Armor material requirements">
           <thead>
             <tr>
-              <th>Material</th>
-              <th>Need</th>
-              <th>Owned</th>
-              <th>Missing</th>
+              <th scope="col">Material</th>
+              <th scope="col">Need</th>
+              <th scope="col">Owned</th>
+              <th scope="col">Missing</th>
             </tr>
           </thead>
 
           {commonPlannerMaterials.length > 0 && (
             <tbody className="armor-planner__group">
               <tr className="armor-planner__group-title">
-                <th colSpan="4">Common materials</th>
+                <th scope="rowgroup" colSpan="4">
+                  Common materials
+                </th>
               </tr>
 
               {commonPlannerMaterials.map((material) =>
@@ -111,7 +120,9 @@ function ArmorPlanner({
           {orderedRareMaterials.length > 0 && (
             <tbody className="armor-planner__group">
               <tr className="armor-planner__group-title">
-                <th colSpan="4">Rare materials</th>
+                <th scope="rowgroup" colSpan="4">
+                  Rare materials
+                </th>
               </tr>
 
               {orderedRareMaterials.map((material) =>

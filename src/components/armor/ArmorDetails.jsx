@@ -37,11 +37,18 @@ function ArmorDetails({
     .map((location) => location.name)
     .join(" • ");
 
+  const titleId = `armor-details-${armor.id}-title`;
+
   return (
-    <section id="armor-details" className="armor-details">
+    <section
+      id="armor-details"
+      className="armor-details"
+      aria-labelledby={titleId}
+      tabIndex={-1}
+    >
       <header className="armor-details__header">
         <div>
-          <h2>{armor.name}</h2>
+          <h2 id={titleId}>{armor.name}</h2>
 
           {armor.prestige && (
             <span className="armor-details__prestige">Prestige</span>

@@ -60,7 +60,7 @@ const materials = {
       id: "plant-fiber",
       name: "Plant Fiber",
       type: "common",
-      icon: "/images/materials/common/Plant_fiber.png",
+      icon: "/images/materials/common/Plant_Fiber.png",
       wikiUrl: "https://wiki.guildwars.com/wiki/Plant_Fiber",
       acquisitionMethodIds: ["salvage", "material-trader"],
     },

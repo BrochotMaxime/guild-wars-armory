@@ -7,7 +7,9 @@ function WorkflowPanel({
   onToggle,
   children,
 }) {
+  const headingId = `${id}-heading`;
   const contentId = `${id}-content`;
+  const summaryText = summary || "Not selected";
 
   return (
     <section
@@ -15,11 +17,13 @@ function WorkflowPanel({
       className={`workflow-panel ${
         isExpanded ? "workflow-panel--expanded" : ""
       }`}
+      aria-labelledby={headingId}
     >
-      <h2 className="workflow-panel__heading">
+      <h2 id={headingId} className="workflow-panel__heading">
         <button
           type="button"
           className="workflow-panel__trigger"
+          aria-label={`${title}: ${summaryText}`}
           aria-expanded={isExpanded}
           aria-controls={contentId}
           disabled={!isAvailable}
@@ -27,9 +31,7 @@ function WorkflowPanel({
         >
           <span className="workflow-panel__title">{title}</span>
 
-          <span className="workflow-panel__summary">
-            {summary || "Not selected"}
-          </span>
+          <span className="workflow-panel__summary">{summaryText}</span>
 
           <span className="workflow-panel__chevron" aria-hidden="true">
             ▼

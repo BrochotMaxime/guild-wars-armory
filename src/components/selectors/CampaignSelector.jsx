@@ -4,6 +4,8 @@ function CampaignSelector({ campaigns, selectedCampaign, onSelectCampaign }) {
       className={`selector-grid selector-grid--campaigns ${
         selectedCampaign ? "selector-grid--has-selection" : ""
       }`}
+      role="group"
+      aria-label="Choose a campaign"
     >
       {campaigns.map((campaign) => {
         const isSelected = selectedCampaign?.id === campaign.id;
