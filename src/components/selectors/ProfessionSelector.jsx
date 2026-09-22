@@ -8,6 +8,8 @@ function ProfessionSelector({
       className={`selector-grid selector-grid--professions ${
         selectedProfession ? "selector-grid--has-selection" : ""
       }`}
+      role="group"
+      aria-label="Choose a profession"
     >
       {professions.map((profession) => {
         const isSelected = selectedProfession?.id === profession.id;

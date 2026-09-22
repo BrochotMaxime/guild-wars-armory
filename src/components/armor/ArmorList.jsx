@@ -24,14 +24,34 @@ function ArmorList({ armors, selectedArmor, onSelectArmor }) {
       {armors.length > 0 ? (
         <div className="armor-list__groups">
           {standardArmors.length > 0 && (
-            <div className="armor-list__grid">
-              {standardArmors.map(renderArmorCard)}
+            <div
+              className="armor-list__group"
+              role="group"
+              aria-labelledby="standard-armors-title"
+            >
+              <h3 id="standard-armors-title" className="visually-hidden">
+                Standard armors
+              </h3>
+
+              <div className="armor-list__grid">
+                {standardArmors.map(renderArmorCard)}
+              </div>
             </div>
           )}
 
           {prestigeArmors.length > 0 && (
-            <div className="armor-list__grid">
-              {prestigeArmors.map(renderArmorCard)}
+            <div
+              className="armor-list__group"
+              role="group"
+              aria-labelledby="prestige-armors-title"
+            >
+              <h3 id="prestige-armors-title" className="visually-hidden">
+                Prestige armors
+              </h3>
+
+              <div className="armor-list__grid">
+                {prestigeArmors.map(renderArmorCard)}
+              </div>
             </div>
           )}
         </div>

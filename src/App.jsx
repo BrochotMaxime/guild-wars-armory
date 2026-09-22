@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 
 import AppHeader from "./components/layout/AppHeader";
 import AppFooter from "./components/layout/AppFooter";
@@ -51,6 +51,61 @@ function App() {
     resetArmorState();
   }
 
+  function clearUrlFragment() {
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${window.location.search}`,
+    );
+  }
+
+  useLayoutEffect(() => {
+    if (window.location.hash === "#main-content") {
+      clearUrlFragment();
+    }
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
+  }, []);
+
+  function handleSkipToMainClick(event) {
+    event.preventDefault();
+
+    clearUrlFragment();
+
+    const mainContent = document.getElementById("main-content");
+
+    if (!mainContent) {
+      return;
+    }
+
+    mainContent.focus({
+      preventScroll: true,
+    });
+
+    const breadcrumb = document.querySelector(".breadcrumb");
+    const breadcrumbHeight = breadcrumb?.offsetHeight ?? 0;
+    const spacingBelowBreadcrumb = 16;
+
+    const targetPosition =
+      mainContent.getBoundingClientRect().top +
+      window.scrollY -
+      breadcrumbHeight -
+      spacingBelowBreadcrumb;
+
+    const shouldReduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: shouldReduceMotion ? "auto" : "smooth",
+    });
+  }
+
   function handleProfessionSelect(profession) {
     const hasProfessionChanged = selectedProfession?.id !== profession.id;
 
@@ -81,6 +136,7 @@ function App() {
   }
 
   function handleHomeBreadcrumbClick() {
+    clearUrlFragment();
     setSelectedProfession(null);
     resetCampaignState();
     returnToWorkflowStart();
@@ -106,6 +162,14 @@ function App() {
 
   return (
     <>
+      <a
+        className="skip-link"
+        href="#main-content"
+        onClick={handleSkipToMainClick}
+      >
+        Skip to main content
+      </a>
+
       <Breadcrumb
         selectedProfession={selectedProfession}
         selectedCampaign={selectedCampaign}
@@ -115,9 +179,10 @@ function App() {
         onCampaignClick={handleCampaignBreadcrumbClick}
         onArmorClick={handleArmorBreadcrumbClick}
       />
+
       <AppHeader />
 
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <div className="workflow">
           <WorkflowPanel
             id="profession-step"

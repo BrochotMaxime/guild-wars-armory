@@ -76,13 +76,13 @@
 
 .armor-planner thead th {
   color: $color-accent-gold;
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   background-color: $color-interface-dark;
 }
 
-.armor-planner tbody:last-child tr:last-child td {
+.armor-planner tbody:last-child tr:last-child > * {
   border-bottom: 0;
 }
 
@@ -110,7 +110,7 @@
   width: auto;
   padding-block: $spacing-xs;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   text-align: left;
   text-transform: uppercase;
@@ -134,7 +134,8 @@
 
 .armor-planner__craft-option {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  min-height: 1.5rem;
   gap: 0.25rem;
   width: fit-content;
   color: rgba(255, 255, 255, 0.75);

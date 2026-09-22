@@ -10,20 +10,24 @@ function CurrencyAmount({ goldAmount }) {
     .join(" and ");
 
   return (
-    <span className="currency-amount" role="img" aria-label={accessibleAmount}>
-      {platinum > 0 && (
-        <span className="currency-amount__unit" aria-hidden="true">
-          {platinum}
-          <img src="/images/materials/Platinum.png" alt="" />
-        </span>
-      )}
+    <span className="currency-amount">
+      <span className="visually-hidden">{accessibleAmount}</span>
 
-      {(gold > 0 || platinum === 0) && (
-        <span className="currency-amount__unit" aria-hidden="true">
-          {gold}
-          <img src="/images/materials/Gold.png" alt="" />
-        </span>
-      )}
+      <span aria-hidden="true">
+        {platinum > 0 && (
+          <span className="currency-amount__unit">
+            {platinum}
+            <img src="/images/materials/Platinum.png" alt="" />
+          </span>
+        )}
+
+        {(gold > 0 || platinum === 0) && (
+          <span className="currency-amount__unit">
+            {gold}
+            <img src="/images/materials/Gold.png" alt="" />
+          </span>
+        )}
+      </span>
     </span>
   );
 }

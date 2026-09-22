@@ -6,10 +6,19 @@ function MaterialCraftingRecipe({ recipe, materials }) {
   }
 
   return (
-    <div className="material-details__recipe">
-      <span className="material-details__recipe-label">Recipe</span>
+    <div
+      className="material-details__recipe"
+      role="group"
+      aria-labelledby={`recipe-${recipe.outputMaterialId}-title`}
+    >
+      <h5
+        id={`recipe-${recipe.outputMaterialId}-title`}
+        className="material-details__recipe-label"
+      >
+        Recipe
+      </h5>
 
-      <div className="material-details__ingredients">
+      <ul className="material-details__ingredients">
         {recipe.ingredients.map(({ materialId, quantity }) => {
           const ingredient = getMaterialById(materialId);
 
@@ -18,26 +27,31 @@ function MaterialCraftingRecipe({ recipe, materials }) {
           }
 
           return (
-            <span
-              key={materialId}
-              className="material-details__ingredient"
-              title={`${quantity} ${ingredient.name}`}
-            >
-              <strong>{quantity}</strong>
+            <li key={materialId} className="material-details__ingredient">
+              <span className="visually-hidden">
+                {quantity} {ingredient.name}
+              </span>
 
-              <img src={ingredient.icon} alt={ingredient.name} />
-            </span>
+              <span
+                className="material-details__ingredient-content"
+                aria-hidden="true"
+              >
+                <strong>{quantity}</strong>
+
+                <img src={ingredient.icon} alt="" />
+              </span>
+            </li>
           );
         })}
 
         {recipe.gold > 0 && (
-          <span className="material-details__recipe-gold">
+          <li className="material-details__recipe-gold">
             <strong>
               <CurrencyAmount goldAmount={recipe.gold} />
             </strong>
-          </span>
+          </li>
         )}
-      </div>
+      </ul>
     </div>
   );
 }

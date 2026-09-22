@@ -31,9 +31,17 @@ if (typeof window !== "undefined") {
 
   Object.defineProperty(window, "requestAnimationFrame", {
     writable: true,
-    value: vi.fn((callback) => {
-      callback(0);
-      return 0;
+    value: vi.fn((callback) =>
+      window.setTimeout(() => {
+        callback(performance.now());
+      }, 0),
+    ),
+  });
+
+  Object.defineProperty(window, "cancelAnimationFrame", {
+    writable: true,
+    value: vi.fn((requestId) => {
+      window.clearTimeout(requestId);
     }),
   });
 }
