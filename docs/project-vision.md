@@ -1,74 +1,79 @@
 # Project Vision
 
-## Project Overview
+## Project overview
 
-Guild Wars Armory is a lightweight web application designed to help Guild Wars players plan the acquisition of an armor set.
+Guild Wars Armory is a lightweight web application designed to help Guild Wars players plan the acquisition of armor sets.
 
-The application focuses on a simple workflow:
+The application focuses on the following workflow:
 
 ```text
 Armor → Requirements → Acquisition
 ```
 
-Players select a profession, choose a campaign, select an armor set, review its requirements, compare them with their current inventory, and identify the materials they still need.
+Players select a profession and campaign, choose an armor set, review its requirements, compare them with their current inventory, and identify the materials they still need.
 
 The application is particularly useful for players using Melandru's Accord, where material traders are unavailable and careful resource management becomes more important.
 
 ## Problem
 
-The Guild Wars Wiki already provides detailed information about armor costs and material requirements.
+The Guild Wars Wiki provides detailed information about armor costs and material requirements.
 
-However, players still need to manually determine:
+However, players still need to determine manually:
 
 - which required materials they already own;
 - which materials are still missing;
 - which common materials must be kept to craft missing rare materials;
-- how much additional material is required when crafting rare materials;
+- how many crafting operations are required;
+- how much additional gold and material is required when crafting rare materials;
 - which acquisition methods remain relevant when playing Melandru's Accord.
 
-Guild Wars Armory aims to simplify this planning process.
+Guild Wars Armory simplifies this planning process by bringing these calculations together in a single workflow.
 
-## Target Users
+## Target users
 
 The primary target users are Guild Wars players who want to prepare the acquisition of an armor set.
 
 The application is especially useful for players using Melandru's Accord, where access to material traders is restricted and materials must often be obtained through salvage or crafting.
 
-## Main User Goal
+## Main user goal
 
 The application should answer the following question:
 
 > What should I actually keep while playing Melandru's Accord to eventually craft this armor?
 
-## V1 Scope
+## V1 scope
 
-The first version will allow users to:
+The first version allows users to:
 
 - select a profession;
 - select a campaign;
-- browse the available armor sets;
+- browse the corresponding armor sets;
 - view male and female armor previews;
-- view armor location;
+- view armor crafting locations;
 - view the total gold and material requirements;
 - enter the materials they currently own;
 - calculate missing materials;
 - calculate the common materials required to craft missing rare materials;
 - aggregate direct armor requirements and crafting requirements;
+- calculate additional crafting costs;
 - view relevant acquisition methods;
 - identify acquisition methods unavailable in Melandru's Accord;
-- access Guild Wars Wiki links for detailed material information;
-- navigate backward through profession, campaign, and armor selection.
+- access Guild Wars Wiki links for additional material information;
+- navigate backward through the profession, campaign, and armor selections;
+- reset dependent selections when an earlier choice changes;
+- complete the main workflow using keyboard navigation;
+- use the application across mobile and desktop layouts.
 
-## Out of Scope for V1
+## Out of scope for V1
 
-The first version will not include:
+The first version does not include:
 
 - user accounts;
 - authentication;
 - backend services;
 - databases;
 - saved inventories;
-- localStorage persistence;
+- local storage persistence;
 - multiple armor tracking;
 - character management;
 - farming guides;
@@ -76,14 +81,15 @@ The first version will not include:
 - dynamic material prices;
 - build planning.
 
-## Product Principles
+## Product principles
 
 The application should remain:
 
 - simple to understand;
 - simple to use;
 - simple to maintain;
-- focused on the armor planning workflow;
+- accessible through semantic and keyboard-friendly interactions;
+- focused on the armor-planning workflow;
 - lightweight in its technical architecture.
 
 Features should only be introduced when they clearly improve the core user experience.

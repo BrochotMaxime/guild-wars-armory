@@ -4,22 +4,29 @@
 
 Architecture Decision Records (ADRs) document important technical decisions made during the development of Guild Wars Armory.
 
-They provide context about why a decision was made and help keep the project's technical choices understandable over time.
+They preserve the context behind each decision and help keep the project's technical choices understandable over time.
 
-## When to Create an ADR
+## Decision records
 
-An ADR should be created when a decision has a meaningful impact on the architecture or development of the project.
+| ADR                                         | Decision              | Status   |
+| ------------------------------------------- | --------------------- | -------- |
+| [ADR-001](ADR-001-use-local-static-data.md) | Use local static data | Accepted |
+
+## When to create an ADR
+
+An ADR should be created when a decision has a meaningful impact on the architecture or long-term development of the project.
 
 Examples include:
 
 - choosing a technology or major dependency;
 - defining how application data is stored;
 - introducing a new architectural pattern;
+- selecting a deployment architecture;
 - changing an important existing technical decision.
 
-Minor implementation details do not require an ADR.
+Minor implementation details and easily reversible code changes do not require an ADR.
 
-## File Naming
+## File naming
 
 ADR files follow this naming convention:
 
@@ -34,12 +41,14 @@ ADR-001-use-local-static-data.md
 ADR-002-example-decision.md
 ```
 
-## ADR Structure
+ADR numbers are sequential and must not be reused, including when a decision is superseded or deprecated.
+
+## ADR structure
 
 Each ADR should use the following structure:
 
 ```markdown
-# ADR-XXX — Decision Title
+# ADR-XXX — Decision title
 
 ## Status
 
@@ -47,7 +56,7 @@ Proposed | Accepted | Superseded | Deprecated
 
 ## Context
 
-Describe the problem or situation that requires a decision.
+Describe the problem, constraints, and situation that require a decision.
 
 ## Decision
 
@@ -58,7 +67,9 @@ Describe the chosen solution.
 Describe the main positive and negative consequences of the decision.
 ```
 
-## Status
+An ADR may also include references to related issues, documentation, or superseding decisions when useful.
+
+## Status conventions
 
 An ADR can have one of the following statuses:
 
@@ -67,4 +78,10 @@ An ADR can have one of the following statuses:
 - **Superseded** — the decision has been replaced by another ADR;
 - **Deprecated** — the decision is no longer recommended or relevant.
 
-Accepted ADRs should not be rewritten when an architectural decision changes. A new ADR should document the new decision and supersede the previous one.
+## Updating decisions
+
+Accepted ADRs should not be rewritten when the architectural decision changes.
+
+A new ADR should document the new context and decision. The previous ADR should then be marked as **Superseded** and reference the ADR that replaced it.
+
+Small corrections that do not change the meaning of a decision, such as spelling or formatting fixes, may be applied directly.

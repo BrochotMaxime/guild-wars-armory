@@ -2,110 +2,173 @@
 
 ## Purpose
 
-This document defines the main architectural principles of Guild Wars Armory.
+This document describes the main architectural principles and technical organization of Guild Wars Armory V1.
 
-The architecture should remain simple, readable, and appropriate for the scope of the V1.
+The architecture remains simple, readable, and appropriate for the current scope of the application.
 
-## Architecture Principles
+## Architecture principles
 
-### Single Responsibility
+### Single responsibility
 
-Each part of the application should have one clear responsibility:
+Each part of the application has one clear responsibility:
 
 - components handle the user interface;
-- utility functions handle business logic;
-- data files contain static Guild Wars data.
+- hooks manage reusable stateful behavior;
+- utility functions handle calculations and data preparation;
+- data files contain static Guild Wars data;
+- stylesheets define the visual presentation and responsive behavior;
+- `App.jsx` coordinates the main application workflow.
 
 ### Simplicity
 
-Avoid unnecessary abstractions, dependencies, and architectural complexity.
+The application avoids unnecessary abstractions, dependencies, and architectural complexity.
 
 New patterns or tools should only be introduced when they solve a concrete problem.
 
-### Separation of Concerns
+### Separation of concerns
 
 The application separates its main responsibilities:
 
 ```text
 data/
-→ static Guild Wars data
+→ Static Guild Wars data
 
 utils/
-→ business logic and calculations
+→ Pure business logic and calculations
+
+hooks/
+→ Reusable state and navigation behavior
 
 components/
-→ user interface
+→ User interface and user interactions
+
+styles/
+→ Global, component, and responsive styles
 
 App.jsx
-→ application workflow and shared state
+→ Main workflow coordination and shared selections
 ```
 
-### Scalability
+### Data-driven design
 
-New professions, campaigns, armor sets, materials, or crafting recipes should primarily be added through data rather than specific application logic.
+Professions, campaigns, armor sets, materials, acquisition methods, and crafting recipes are represented as data.
 
-## Technology Stack
+New game content should primarily be added through the data layer rather than through armor-specific or material-specific interface logic.
 
-The V1 uses:
+### Testability
 
-- React
-- Vite
-- JavaScript
-- SCSS
-- ESLint
-- Prettier
+Core calculations are implemented as pure utility functions whenever possible.
 
-The V1 does not require a backend, API, database, authentication, or external state management library.
+This separation allows the business rules to be tested independently from the React interface. Integration tests then validate the critical user workflow and accessibility behavior.
 
-## Source Structure
+## Technology stack
 
-The initial source structure will follow this organization:
+V1 uses:
+
+- React for the user interface;
+- Vite for development and production builds;
+- JavaScript for application logic and data;
+- Sass with SCSS syntax for styling;
+- Vitest for unit and integration tests;
+- React Testing Library and `user-event` for interface tests;
+- axe-core for automated accessibility checks;
+- ESLint for static code analysis;
+- Prettier for code formatting.
+
+V1 does not require:
+
+- a backend;
+- an external API;
+- a database;
+- authentication;
+- an external state management library.
+
+## Project structure
 
 ```text
+docs/                  Project documentation and architecture decisions
+
+public/
+└── images/            Branding, backgrounds, armor, profession,
+                       campaign, currency, and material assets
+
 src/
-├── assets/
-├── components/
-├── data/
-├── utils/
-├── styles/
-├── App.jsx
-└── main.jsx
+├── components/        React interface components
+├── data/              Static application data
+├── hooks/             Reusable state and navigation logic
+├── styles/            Sass stylesheets
+├── utils/             Pure calculations and data preparation
+├── App.jsx            Main application component
+└── main.jsx           Application entry point
 ```
 
-The structure may evolve during development when a change provides a clear improvement.
+Components are grouped by their interface responsibility, including armor, layout, material, selector, UI, and workflow components.
 
-## Data and Business Logic
+## Data and business logic
 
 Guild Wars data is stored locally and kept separate from the user interface.
 
-Business logic is handled through reusable utility functions, such as:
+Core business logic is handled through reusable utility functions, including:
 
 ```text
 calculateMissingMaterials()
 calculateCraftingRequirements()
 aggregateMaterials()
+prepareArmorPlannerMaterials()
 ```
 
-Calculations should remain generic and data-driven rather than containing armor-specific or material-specific conditions.
+These functions calculate missing materials, expand crafting requirements, aggregate overlapping requirements, and prepare materials for display in the armor planner.
 
-## State Management
+Calculations remain generic and data-driven rather than containing armor-specific or material-specific conditions.
 
-Shared application state remains in `App.jsx` for the V1.
+## State management
+
+The main profession, campaign, and armor selections are coordinated by `App.jsx`.
+
+Reusable stateful behavior is extracted into custom hooks:
+
+- `useArmorPlanning` manages inventory values, crafting selections, and calculated material requirements;
+- `useWorkflowNavigation` manages the active workflow step, scrolling, focus movement, and reduced-motion behavior.
 
 Components receive data through props and communicate changes through callbacks.
 
-No additional state management library is required unless the application's complexity justifies it.
+No external state management library is required for the current application scope.
 
-## External Resources
+## Styling and responsive behavior
+
+The interface uses Sass stylesheets organized by responsibility.
+
+Shared variables define colors, spacing, typography, breakpoints, borders, and shadows. Component styles define the presentation of individual interface areas.
+
+Responsive layouts support mobile and desktop use. Reduced-motion preferences and visible keyboard focus states are also respected.
+
+## Testing strategy
+
+Unit tests validate the core calculation and material-preparation functions.
+
+Integration tests validate:
+
+- the initial workflow state;
+- profession, campaign, and armor selection;
+- dependent selection resets;
+- breadcrumb navigation;
+- keyboard-only navigation;
+- skip-link behavior.
+
+Automated axe-core tests supplement manual accessibility checks. They help detect common accessibility problems but do not replace keyboard and visual testing.
+
+## External resources
 
 Guild Wars Armory complements rather than replaces the Guild Wars Wiki.
 
-The application focuses on:
+The application focuses on answering:
 
 ```text
 What do I need?
+
 What am I missing?
+
 What should I keep?
 ```
 
-The Guild Wars Wiki remains the reference for detailed acquisition methods and additional game information.
+The Guild Wars Wiki remains the external reference for detailed acquisition information and additional game documentation.

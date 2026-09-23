@@ -2,7 +2,7 @@
 
 > Plan your armor. Track your materials.
 
-Guild Wars Armory is a fan-made planning application for Guild Wars armor sets. It helps players explore available armor, review crafting requirements, track their inventory, and calculate the materials they still need.
+Guild Wars Armory is an unofficial, fan-made planning application for Guild Wars armor sets. It helps players explore available armor, review crafting requirements, track owned materials, and calculate what they still need.
 
 ## Features
 
@@ -17,18 +17,22 @@ Guild Wars Armory is a fan-made planning application for Guild Wars armor sets. 
 - Calculate additional crafting costs
 - Review material acquisition methods
 - Access related Guild Wars Wiki pages
+- Navigate the complete workflow with a keyboard
+- Use the application across mobile and desktop layouts
 
-## Technologies
+## Technology stack
 
 - React
 - Vite
 - JavaScript
 - Sass
 - Vitest
+- React Testing Library
+- axe-core
 - ESLint
 - Prettier
 
-Application data is currently stored locally as static JavaScript data.
+Application data is stored locally as static JavaScript data for V1.
 
 ## Installation
 
@@ -84,15 +88,18 @@ Unit tests cover the core armor-planning calculations, including:
 - Rare material grouping and ordering
 - Additional crafting costs
 
-### Integration tests
+### Integration and accessibility tests
 
-Integration tests use React Testing Library, `user-event`, and `jsdom` to cover the main application workflow:
+Integration tests use React Testing Library, `user-event`, and `jsdom` to cover the main application workflow, including:
 
 - Initial workflow state
 - Profession, campaign, and armor selection
 - Armor filtering and details display
 - Reset behavior when changing profession or campaign
 - Complete reset from the home breadcrumb
+- Skip-link behavior
+- Keyboard-only navigation
+- Automated accessibility checks with axe-core
 
 Run the tests in watch mode while developing:
 
@@ -129,14 +136,16 @@ npx prettier . --write
 ## Project structure
 
 ```text
-docs/                 Project documentation and architecture decisions
-public/               Static assets
+docs/                  Project documentation and architecture decisions
+
+public/                Static assets
+
 src/
-├── components/       React interface components
-├── data/             Local application data
-├── hooks/            Reusable state and navigation logic
-├── styles/           Sass stylesheets
-├── utils/            Pure calculation and preparation functions
+├── components/        React interface components
+├── data/              Local application data
+├── hooks/             Reusable state and navigation logic
+├── styles/            Sass stylesheets
+├── utils/             Pure calculation and preparation functions
 ├── App.jsx            Main application component
 └── main.jsx           Application entry point
 ```
@@ -150,11 +159,20 @@ Additional project documentation is available in the [`docs/`](docs/) directory:
 - [Data model](docs/data-model.md)
 - [Functional workflow](docs/functional-workflow.md)
 - [Roadmap](docs/roadmap.md)
+- [Coding conventions](docs/coding-conventions.md)
 - [Architecture Decision Records](docs/adr/README.md)
 
 ## Project status
 
-Guild Wars Armory is currently under active development. The first version uses local static data and focuses on the core armor-planning workflow.
+The V1 feature set is complete and currently being prepared for its first production deployment.
+
+V1 uses local static data and focuses on the core armor-planning workflow. Future improvements and possible extensions are documented in the project roadmap.
+
+## Attribution and external resources
+
+Armor, material, and acquisition information is based on Guild Wars resources and references from the [Guild Wars Wiki](https://wiki.guildwars.com/).
+
+External links to Guild Wars Wiki are provided to help users find additional information about materials and acquisition methods.
 
 ## Disclaimer
 
