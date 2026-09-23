@@ -8,7 +8,7 @@ Guild Wars Armory is an unofficial, fan-made planning application for Guild Wars
 
 Guild Wars Armory is available at:
 
-[https://guild-wars-armory.onrender.com](https://guild-wars-armory.onrender.com)
+[https://guildwarsarmory.com](https://guildwarsarmory.com)
 
 ## Features
 
