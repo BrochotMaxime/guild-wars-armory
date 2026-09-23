@@ -4,6 +4,12 @@
 
 Guild Wars Armory is an unofficial, fan-made planning application for Guild Wars armor sets. It helps players explore available armor, review crafting requirements, track owned materials, and calculate what they still need.
 
+## Live application
+
+Guild Wars Armory is available at:
+
+[https://guild-wars-armory.onrender.com](https://guild-wars-armory.onrender.com)
+
 ## Features
 
 - Select a profession and campaign
@@ -164,9 +170,9 @@ Additional project documentation is available in the [`docs/`](docs/) directory:
 
 ## Project status
 
-The V1 feature set is complete and currently being prepared for its first production deployment.
+Guild Wars Armory V1 is complete and deployed in production.
 
-V1 uses local static data and focuses on the core armor-planning workflow. Future improvements and possible extensions are documented in the project roadmap.
+The application uses local static data and focuses on the core armor-planning workflow. Future improvements and possible extensions are documented in the project roadmap.
 
 ## Attribution and external resources
 
