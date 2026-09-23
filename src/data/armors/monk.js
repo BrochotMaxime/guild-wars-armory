@@ -954,11 +954,11 @@ const monkArmors = [
           quantity: 350,
         },
         {
-          materialId: "monstruous-claw",
+          materialId: "monstrous-claw",
           quantity: 14,
         },
         {
-          materialId: "monstruous-fang",
+          materialId: "monstrous-fang",
           quantity: 14,
         },
         {

@@ -608,7 +608,7 @@ const assassinArmors = [
           quantity: 10,
         },
         {
-          materialId: "monstruous-claw",
+          materialId: "monstrous-claw",
           quantity: 15,
         },
         {
