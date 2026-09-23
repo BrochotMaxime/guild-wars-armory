@@ -16,7 +16,7 @@ describe("App accessibility", () => {
     expect(results.violations).toEqual([]);
   });
 
-  it("has no detectable accessibility violations in the armor planner", async () => {
+  it("has no detectable accessibility violations in the material checklist", async () => {
     const user = userEvent.setup();
     const { container } = render(<App />);
 
@@ -40,13 +40,13 @@ describe("App accessibility", () => {
 
     await user.click(
       screen.getByRole("button", {
-        name: /plan this armor/i,
+        name: /check materials/i,
       }),
     );
 
     expect(
       screen.getByRole("heading", {
-        name: "Armor planner",
+        name: "Material checklist",
       }),
     ).toBeVisible();
 

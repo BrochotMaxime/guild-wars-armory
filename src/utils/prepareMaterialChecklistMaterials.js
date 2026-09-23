@@ -1,4 +1,4 @@
-function prepareArmorPlannerMaterials({
+function prepareMaterialChecklistMaterials({
   materialStatus,
   actualMaterialNeeds,
   materials,
@@ -99,4 +99,4 @@ function prepareArmorPlannerMaterials({
   };
 }
 
-export default prepareArmorPlannerMaterials;
+export default prepareMaterialChecklistMaterials;

@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 
-import prepareArmorPlannerMaterials from "./prepareArmorPlannerMaterials";
+import prepareMaterialChecklistMaterials from "./prepareMaterialChecklistMaterials";
 
-describe("prepareArmorPlannerMaterials", () => {
+describe("prepareMaterialChecklistMaterials", () => {
   const materials = [
     {
       id: "iron-ingot",
@@ -59,7 +59,7 @@ describe("prepareArmorPlannerMaterials", () => {
       },
     ];
 
-    const result = prepareArmorPlannerMaterials({
+    const result = prepareMaterialChecklistMaterials({
       materialStatus,
       actualMaterialNeeds,
       materials,
@@ -113,7 +113,7 @@ describe("prepareArmorPlannerMaterials", () => {
       },
     ];
 
-    const result = prepareArmorPlannerMaterials({
+    const result = prepareMaterialChecklistMaterials({
       materialStatus,
       actualMaterialNeeds,
       materials,
@@ -145,7 +145,7 @@ describe("prepareArmorPlannerMaterials", () => {
       createMaterialStatus("orphan-rare-material", 5),
     ];
 
-    const result = prepareArmorPlannerMaterials({
+    const result = prepareMaterialChecklistMaterials({
       materialStatus,
       actualMaterialNeeds,
       materials,
@@ -167,7 +167,7 @@ describe("prepareArmorPlannerMaterials", () => {
   it("ignores materials whose type cannot be found", () => {
     const unknownMaterial = createMaterialStatus("unknown-material", 10);
 
-    const result = prepareArmorPlannerMaterials({
+    const result = prepareMaterialChecklistMaterials({
       materialStatus: [unknownMaterial],
       actualMaterialNeeds: [],
       materials,
@@ -179,7 +179,7 @@ describe("prepareArmorPlannerMaterials", () => {
   });
 
   it("returns empty groups and zero gold when no materials are provided", () => {
-    const result = prepareArmorPlannerMaterials({
+    const result = prepareMaterialChecklistMaterials({
       materialStatus: [],
       actualMaterialNeeds: [],
       materials,

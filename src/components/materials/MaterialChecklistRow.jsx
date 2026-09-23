@@ -1,4 +1,4 @@
-function ArmorPlannerRow({ row, onInventoryChange, onCraftingToggle }) {
+function MaterialChecklistRow({ row, onInventoryChange, onCraftingToggle }) {
   const {
     material,
     required,
@@ -15,8 +15,8 @@ function ArmorPlannerRow({ row, onInventoryChange, onCraftingToggle }) {
     if (armorQuantity > 0 && craftQuantity > 0) {
       return (
         <>
-          {armorQuantity} + <br className="armor-planner__need-break" />
-          {craftQuantity} = <br className="armor-planner__need-break" />
+          {armorQuantity} + <br className="material-checklist__need-break" />
+          {craftQuantity} = <br className="material-checklist__need-break" />
           {required}
         </>
       );
@@ -33,13 +33,13 @@ function ArmorPlannerRow({ row, onInventoryChange, onCraftingToggle }) {
     <tr>
       <th scope="row">
         <div
-          className="armor-planner__material"
+          className="material-checklist__material"
           style={{ "--material-depth": depth }}
         >
           <span>{material.name}</span>
 
           {canCraft && missing > 0 && (
-            <label className="armor-planner__craft-option">
+            <label className="material-checklist__craft-option">
               <input
                 type="checkbox"
                 checked={isCrafting}
@@ -71,7 +71,7 @@ function ArmorPlannerRow({ row, onInventoryChange, onCraftingToggle }) {
 
       <td>
         {isCrafting && missing > 0 ? (
-          <span className="armor-planner__crafted-status">Via craft</span>
+          <span className="material-checklist__crafted-status">Via craft</span>
         ) : (
           missing
         )}
@@ -80,4 +80,4 @@ function ArmorPlannerRow({ row, onInventoryChange, onCraftingToggle }) {
   );
 }
 
-export default ArmorPlannerRow;
+export default MaterialChecklistRow;

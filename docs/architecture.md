@@ -114,10 +114,10 @@ Core business logic is handled through reusable utility functions, including:
 calculateMissingMaterials()
 calculateCraftingRequirements()
 aggregateMaterials()
-prepareArmorPlannerMaterials()
+prepareMaterialChecklistMaterials()
 ```
 
-These functions calculate missing materials, expand crafting requirements, aggregate overlapping requirements, and prepare materials for display in the armor planner.
+These functions calculate missing materials, expand crafting requirements, aggregate overlapping requirements, and prepare materials for display in the material checklist.
 
 Calculations remain generic and data-driven rather than containing armor-specific or material-specific conditions.
 

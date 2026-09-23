@@ -235,7 +235,7 @@ function App() {
               materials={allMaterials}
               craftingRecipes={craftingRecipes}
               acquisitionMethods={acquisitionMethods}
-              onPlanArmor={() => scrollToElement("armor-planner")}
+              onCheckMaterials={() => scrollToElement("material-checklist")}
             />
           )}
         </div>

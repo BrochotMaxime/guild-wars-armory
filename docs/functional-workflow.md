@@ -78,11 +78,11 @@ Each material displays:
 - the required quantity;
 - a button for opening its acquisition details.
 
-Selecting **Plan this armor** opens the armor planner and moves the user to it.
+Selecting **Check materials** opens the material checklist and moves the user to it.
 
 ## Inventory input
 
-The armor planner lists the materials involved in the current plan.
+The material checklist lists the materials involved in the current plan.
 
 For each material, the user can enter the quantity they already own.
 

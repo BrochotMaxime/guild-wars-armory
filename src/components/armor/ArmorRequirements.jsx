@@ -1,7 +1,12 @@
 import MaterialItem from "../materials/MaterialItem";
 import CurrencyAmount from "../ui/CurrencyAmount";
 
-function ArmorRequirements({ armor, materials, onMaterialClick, onPlanArmor }) {
+function ArmorRequirements({
+  armor,
+  materials,
+  onMaterialClick,
+  onCheckMaterials,
+}) {
   function getMaterialById(materialId) {
     return materials.find((material) => material.id === materialId);
   }
@@ -64,10 +69,10 @@ function ArmorRequirements({ armor, materials, onMaterialClick, onPlanArmor }) {
 
       <button
         type="button"
-        className="button-primary plan-armor-button"
-        onClick={onPlanArmor}
+        className="button-primary material-checklist-button"
+        onClick={onCheckMaterials}
       >
-        Plan this armor
+        Check materials
       </button>
     </section>
   );

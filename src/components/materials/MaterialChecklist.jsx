@@ -1,8 +1,8 @@
-import ArmorPlannerRow from "./ArmorPlannerRow";
+import MaterialChecklistRow from "./MaterialChecklistRow";
 import CurrencyAmount from "../ui/CurrencyAmount";
-import prepareArmorPlannerMaterials from "../../utils/prepareArmorPlannerMaterials";
+import prepareMaterialChecklistMaterials from "../../utils/prepareMaterialChecklistMaterials";
 
-function ArmorPlanner({
+function MaterialChecklist({
   materialStatus,
   actualMaterialNeeds,
   materials,
@@ -45,7 +45,7 @@ function ArmorPlanner({
     commonPlannerMaterials,
     orderedRareMaterials,
     additionalCraftingGold,
-  } = prepareArmorPlannerMaterials({
+  } = prepareMaterialChecklistMaterials({
     materialStatus,
     actualMaterialNeeds,
     materials,
@@ -72,7 +72,7 @@ function ArmorPlanner({
     };
 
     return (
-      <ArmorPlannerRow
+      <MaterialChecklistRow
         key={materialId}
         row={row}
         onInventoryChange={onInventoryChange}
@@ -81,19 +81,19 @@ function ArmorPlanner({
     );
   }
 
-  const titleId = "armor-planner-title";
+  const titleId = "material-checklist-title";
 
   return (
     <section
-      id="armor-planner"
-      className="armor-planner"
+      id="material-checklist"
+      className="material-checklist"
       aria-labelledby={titleId}
       tabIndex={-1}
     >
-      <h3 id={titleId}>Armor planner</h3>
+      <h3 id={titleId}>Material checklist</h3>
 
-      <div className="armor-planner__table-wrapper">
-        <table aria-label="Armor material requirements">
+      <div className="material-checklist__table-wrapper">
+        <table aria-label="Material requirements">
           <thead>
             <tr>
               <th scope="col">Material</th>
@@ -104,8 +104,8 @@ function ArmorPlanner({
           </thead>
 
           {commonPlannerMaterials.length > 0 && (
-            <tbody className="armor-planner__group">
-              <tr className="armor-planner__group-title">
+            <tbody className="material-checklist__group">
+              <tr className="material-checklist__group-title">
                 <th scope="rowgroup" colSpan="4">
                   Common materials
                 </th>
@@ -118,8 +118,8 @@ function ArmorPlanner({
           )}
 
           {orderedRareMaterials.length > 0 && (
-            <tbody className="armor-planner__group">
-              <tr className="armor-planner__group-title">
+            <tbody className="material-checklist__group">
+              <tr className="material-checklist__group-title">
                 <th scope="rowgroup" colSpan="4">
                   Rare materials
                 </th>
@@ -134,7 +134,7 @@ function ArmorPlanner({
       </div>
 
       {additionalCraftingGold > 0 && (
-        <p className="armor-planner__crafting-cost">
+        <p className="material-checklist__crafting-cost">
           Additional crafting cost:{" "}
           <strong>
             <CurrencyAmount goldAmount={additionalCraftingGold} />
@@ -145,4 +145,4 @@ function ArmorPlanner({
   );
 }
 
-export default ArmorPlanner;
+export default MaterialChecklist;
