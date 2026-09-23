@@ -95,7 +95,7 @@ const ritualistArmors = [
           quantity: 200,
         },
         {
-          materialId: "monstruous-claw",
+          materialId: "monstrous-claw",
           quantity: 32,
         },
       ],

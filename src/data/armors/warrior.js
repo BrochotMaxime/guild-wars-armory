@@ -911,11 +911,11 @@ const warriorArmors = [
           quantity: 400,
         },
         {
-          materialId: "monstruous-fang",
+          materialId: "monstrous-fang",
           quantity: 24,
         },
         {
-          materialId: "monstruous-claw",
+          materialId: "monstrous-claw",
           quantity: 16,
         },
       ],

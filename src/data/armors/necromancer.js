@@ -505,15 +505,15 @@ const necromancerArmors = [
           quantity: 175,
         },
         {
-          materialId: "monstruous-eye",
+          materialId: "monstrous-eye",
           quantity: 7,
         },
         {
-          materialId: "monstruous-claw",
+          materialId: "monstrous-claw",
           quantity: 7,
         },
         {
-          materialId: "monstruous-fang",
+          materialId: "monstrous-fang",
           quantity: 7,
         },
         {
@@ -599,7 +599,7 @@ const necromancerArmors = [
           quantity: 175,
         },
         {
-          materialId: "monstruous-fang",
+          materialId: "monstrous-fang",
           quantity: 28,
         },
         {
@@ -644,15 +644,15 @@ const necromancerArmors = [
           quantity: 350,
         },
         {
-          materialId: "monstruous-eye",
+          materialId: "monstrous-eye",
           quantity: 7,
         },
         {
-          materialId: "monstruous-claw",
+          materialId: "monstrous-claw",
           quantity: 7,
         },
         {
-          materialId: "monstruous-fang",
+          materialId: "monstrous-fang",
           quantity: 7,
         },
         {
@@ -738,7 +738,7 @@ const necromancerArmors = [
           quantity: 350,
         },
         {
-          materialId: "monstruous-fang",
+          materialId: "monstrous-fang",
           quantity: 35,
         },
         {
@@ -964,11 +964,11 @@ const necromancerArmors = [
           quantity: 175,
         },
         {
-          materialId: "monstruous-claw",
+          materialId: "monstrous-claw",
           quantity: 14,
         },
         {
-          materialId: "monstruous-fang",
+          materialId: "monstrous-fang",
           quantity: 14,
         },
         {
@@ -1054,7 +1054,7 @@ const necromancerArmors = [
           quantity: 21,
         },
         {
-          materialId: "monstruous-fang",
+          materialId: "monstrous-fang",
           quantity: 14,
         },
         {
@@ -1094,11 +1094,11 @@ const necromancerArmors = [
           quantity: 350,
         },
         {
-          materialId: "monstruous-fang",
+          materialId: "monstrous-fang",
           quantity: 21,
         },
         {
-          materialId: "monstruous-claw",
+          materialId: "monstrous-claw",
           quantity: 14,
         },
         {
