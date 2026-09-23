@@ -28,7 +28,7 @@ Use PascalCase for React component files:
 
 ```text
 ArmorDetails.jsx
-ArmorPlannerRow.jsx
+MaterialChecklistRow.jsx
 MaterialDetails.jsx
 ```
 
@@ -47,7 +47,7 @@ Use camelCase for non-component JavaScript files:
 
 ```text
 calculateMissingMaterials.js
-prepareArmorPlannerMaterials.js
+prepareMaterialChecklistMaterials.js
 craftingRecipes.js
 ```
 
@@ -59,7 +59,7 @@ Use the `.test.js` or `.test.jsx` suffix:
 
 ```text
 calculateMissingMaterials.test.js
-prepareArmorPlannerMaterials.test.js
+prepareMaterialChecklistMaterials.test.js
 App.test.jsx
 accessibility.test.jsx
 ```

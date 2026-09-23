@@ -2,17 +2,18 @@ import { useState } from "react";
 
 import useArmorPlanning from "../../hooks/useArmorPlanning";
 
-import MaterialDetails from "../materials/MaterialDetails";
-import ArmorPlanner from "./ArmorPlanner";
 import ArmorPreviewGallery from "./ArmorPreviewGallery";
 import ArmorRequirements from "./ArmorRequirements";
+
+import MaterialDetails from "../materials/MaterialDetails";
+import MaterialChecklist from "../materials/MaterialChecklist";
 
 function ArmorDetails({
   armor,
   materials,
   craftingRecipes,
   acquisitionMethods,
-  onPlanArmor,
+  onCheckMaterials,
 }) {
   const [selectedMaterial, setSelectedMaterial] = useState(null);
 
@@ -28,9 +29,9 @@ function ArmorDetails({
     updateInventory,
   } = useArmorPlanning(armor, materials, craftingRecipes);
 
-  function handlePlanArmor() {
+  function handleCheckMaterials() {
     startPlanning();
-    onPlanArmor();
+    onCheckMaterials();
   }
 
   const craftingLocationNames = armor.craftingLocations
@@ -69,7 +70,7 @@ function ArmorDetails({
           armor={armor}
           materials={materials}
           onMaterialClick={setSelectedMaterial}
-          onPlanArmor={handlePlanArmor}
+          onCheckMaterials={handleCheckMaterials}
         />
       </div>
 
@@ -84,7 +85,7 @@ function ArmorDetails({
       )}
 
       {isCheckingMaterials && (
-        <ArmorPlanner
+        <MaterialChecklist
           materialStatus={materialStatus}
           actualMaterialNeeds={actualMaterialNeeds}
           materials={materials}
