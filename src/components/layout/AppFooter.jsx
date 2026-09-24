@@ -24,6 +24,24 @@ function AppFooter() {
           </p>
         </div>
 
+        <div className="app-footer__privacy">
+          <p>
+            <strong>Privacy</strong>
+          </p>
+
+          <p>
+            Guild Wars Armory uses Plausible Analytics to collect anonymous and
+            aggregated website usage statistics. Plausible does not use cookies,
+            collect personal data, or track visitors across websites. These
+            statistics are used solely to understand and improve the
+            application.
+          </p>
+
+          <a href="https://plausible.io/data-policy">
+            Learn more about Plausible&apos;s data policy
+          </a>
+        </div>
+
         <nav className="app-footer__links" aria-label="Official resources">
           <a href="https://www.guildwars.com/en/">
             Official Guild Wars Reforged website
