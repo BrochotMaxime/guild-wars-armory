@@ -38,6 +38,30 @@
   font-size: 0.75rem;
 }
 
+.app-footer__privacy {
+  display: grid;
+  gap: 0.25rem;
+  padding-top: $spacing-sm;
+  border-top: 1px solid rgba($color-interface-border, 0.65);
+  font-size: 0.75rem;
+
+  strong {
+    color: #ffffff;
+  }
+
+  a {
+    width: fit-content;
+    color: $color-accent-gold;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  }
+}
+
 .app-footer__links {
   display: flex;
   flex-wrap: wrap;
@@ -71,10 +95,15 @@
     text-align: right;
   }
 
+  .app-footer__privacy {
+    grid-column: 1 / -1;
+    justify-items: center;
+    text-align: center;
+  }
+
   .app-footer__links {
     grid-column: 1 / -1;
     justify-content: center;
     padding-top: $spacing-sm;
-    border-top: 1px solid rgba($color-interface-border, 0.65);
   }
 }
