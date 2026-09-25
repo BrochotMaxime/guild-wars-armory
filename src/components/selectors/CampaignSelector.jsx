@@ -1,4 +1,9 @@
-function CampaignSelector({ campaigns, selectedCampaign, onSelectCampaign }) {
+function CampaignSelector({
+  campaigns,
+  availableCampaignIds,
+  selectedCampaign,
+  onSelectCampaign,
+}) {
   return (
     <div
       className={`selector-grid selector-grid--campaigns ${
@@ -8,6 +13,7 @@ function CampaignSelector({ campaigns, selectedCampaign, onSelectCampaign }) {
       aria-label="Choose a campaign"
     >
       {campaigns.map((campaign) => {
+        const isAvailable = availableCampaignIds.has(campaign.id);
         const isSelected = selectedCampaign?.id === campaign.id;
 
         return (
@@ -18,6 +24,7 @@ function CampaignSelector({ campaigns, selectedCampaign, onSelectCampaign }) {
               isSelected ? "campaign-card--selected" : ""
             }`}
             aria-pressed={isSelected}
+            disabled={!isAvailable}
             onClick={() => onSelectCampaign(campaign)}
           >
             <img
@@ -30,6 +37,12 @@ function CampaignSelector({ campaigns, selectedCampaign, onSelectCampaign }) {
 
             <span className="campaign-card__content">
               <span className="campaign-card__name">{campaign.name}</span>
+
+              {!isAvailable && (
+                <span className="campaign-card__availability">
+                  No armor available
+                </span>
+              )}
             </span>
           </button>
         );

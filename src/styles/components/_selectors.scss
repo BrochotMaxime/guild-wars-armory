@@ -69,7 +69,8 @@
   box-shadow: $shadow-selection;
 }
 
-.selector-grid--has-selection :is(.profession-card, .campaign-card):hover {
+.selector-grid--has-selection
+  :is(.profession-card, .campaign-card):not(:disabled):hover {
   opacity: 1;
   filter: none;
 }
@@ -93,7 +94,7 @@
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 
-  &:hover {
+  &:not(:disabled):hover {
     z-index: 1;
     border-color: $color-accent-gold;
     transform: translateY(-0.25rem);
@@ -140,7 +141,7 @@
 }
 
 .profession-card:hover .profession-card__character,
-.campaign-card:hover .campaign-card__image {
+.campaign-card:not(:disabled):hover .campaign-card__image {
   transform: scale(1.04);
 }
 
@@ -188,10 +189,25 @@
 }
 
 .campaign-card__content {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
   width: 100%;
   padding: $spacing-md $spacing-xs $spacing-sm;
+}
+
+.campaign-card:disabled {
+  opacity: 0.35;
+  filter: grayscale(1);
+  cursor: not-allowed;
+}
+
+.campaign-card__availability {
+  font-size: clamp(0.625rem, 1vw, 0.75rem);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: none;
 }
 
 .campaign-card__image {

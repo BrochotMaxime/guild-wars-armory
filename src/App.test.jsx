@@ -376,4 +376,49 @@ describe("App workflow", () => {
       }),
     ).toBeVisible();
   });
+
+  it("disables campaigns without armor for the selected profession", async () => {
+    const user = userEvent.setup();
+
+    render(<App />);
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /assassin/i,
+      }),
+    );
+
+    const campaignTrigger = screen.getByRole("button", {
+      name: /^campaign/i,
+    });
+
+    await waitFor(() => {
+      expect(campaignTrigger).toHaveFocus();
+    });
+
+    const propheciesButton = screen.getByRole("button", {
+      name: /prophecies.*no armor available/i,
+    });
+
+    const factionsButton = screen.getByRole("button", {
+      name: /^factions$/i,
+    });
+
+    expect(propheciesButton).toBeDisabled();
+    expect(factionsButton).toBeEnabled();
+
+    await user.tab();
+
+    expect(factionsButton).toHaveFocus();
+
+    await user.click(propheciesButton);
+
+    expect(campaignTrigger).toHaveTextContent("Not selected");
+
+    const armorTrigger = screen.getByRole("button", {
+      name: /^armor/i,
+    });
+
+    expect(armorTrigger).toBeDisabled();
+  });
 });
