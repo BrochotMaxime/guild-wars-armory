@@ -154,6 +154,12 @@ function App() {
     scrollToWorkflowStep(WORKFLOW_STEPS.armor);
   }
 
+  const availableCampaignIds = new Set(
+    allArmors
+      .filter((armor) => armor.professionId === selectedProfession?.id)
+      .map((armor) => armor.campaignId),
+  );
+
   const filteredArmors = allArmors.filter(
     (armor) =>
       armor.professionId === selectedProfession?.id &&
@@ -208,6 +214,7 @@ function App() {
           >
             <CampaignSelector
               campaigns={campaigns}
+              availableCampaignIds={availableCampaignIds}
               selectedCampaign={selectedCampaign}
               onSelectCampaign={handleCampaignSelect}
             />
