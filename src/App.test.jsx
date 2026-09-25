@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
@@ -420,5 +420,49 @@ describe("App workflow", () => {
     });
 
     expect(armorTrigger).toBeDisabled();
+  });
+
+  it("opens material details from the material checklist", async () => {
+    const user = userEvent.setup();
+
+    render(<App />);
+
+    await selectDeldrimorArmor(user);
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /check materials/i,
+      }),
+    );
+
+    const checklist = await screen.findByRole("region", {
+      name: /material checklist/i,
+    });
+
+    const detailsButton = within(checklist).getAllByRole("button", {
+      name: /view details for/i,
+    })[0];
+
+    const materialRow = detailsButton.closest("tr");
+    const materialIcon = materialRow.querySelector(
+      ".material-checklist__material-icon",
+    );
+
+    expect(materialIcon).toHaveAttribute("src");
+
+    await user.click(detailsButton);
+
+    const dialog = await screen.findByRole("dialog");
+
+    const wikiLink = within(dialog).getByRole("link", {
+      name: /guild wars wiki/i,
+    });
+
+    expect(wikiLink).toHaveAttribute(
+      "href",
+      expect.stringContaining("wiki.guildwars.com"),
+    );
+
+    expect(wikiLink).toHaveAttribute("target", "_blank");
   });
 });

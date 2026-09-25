@@ -1,4 +1,9 @@
-function MaterialChecklistRow({ row, onInventoryChange, onCraftingToggle }) {
+function MaterialChecklistRow({
+  row,
+  onInventoryChange,
+  onCraftingToggle,
+  onMaterialClick,
+}) {
   const {
     material,
     required,
@@ -15,15 +20,15 @@ function MaterialChecklistRow({ row, onInventoryChange, onCraftingToggle }) {
     if (armorQuantity > 0 && craftQuantity > 0) {
       return (
         <>
-          {armorQuantity} + <br className="material-checklist__need-break" />
-          {craftQuantity} = <br className="material-checklist__need-break" />
+          {armorQuantity} <br className="material-checklist__need-break" />+{" "}
+          {craftQuantity} <br className="material-checklist__need-break" />={" "}
           {required}
         </>
       );
     }
 
     if (craftQuantity > 0) {
-      return `+${craftQuantity}`;
+      return `+ ${craftQuantity}`;
     }
 
     return armorQuantity;
@@ -36,7 +41,28 @@ function MaterialChecklistRow({ row, onInventoryChange, onCraftingToggle }) {
           className="material-checklist__material"
           style={{ "--material-depth": depth }}
         >
-          <span>{material.name}</span>
+          <div className="material-checklist__material-identity">
+            <img
+              className="material-checklist__material-icon"
+              src={material.icon}
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+
+            <span className="material-checklist__material-name">
+              {material.name}
+            </span>
+
+            <button
+              type="button"
+              className="material-checklist__details-button"
+              aria-label={`View details for ${material.name}`}
+              onClick={() => onMaterialClick(material)}
+            >
+              Details
+            </button>
+          </div>
 
           {canCraft && missing > 0 && (
             <label className="material-checklist__craft-option">
@@ -54,9 +80,9 @@ function MaterialChecklistRow({ row, onInventoryChange, onCraftingToggle }) {
         </div>
       </th>
 
-      <td>{renderNeed()}</td>
+      <td data-label="Need">{renderNeed()}</td>
 
-      <td>
+      <td data-label="Owned">
         <input
           type="number"
           min="0"
@@ -69,7 +95,7 @@ function MaterialChecklistRow({ row, onInventoryChange, onCraftingToggle }) {
         />
       </td>
 
-      <td>
+      <td data-label="Missing">
         {isCrafting && missing > 0 ? (
           <span className="material-checklist__crafted-status">Via craft</span>
         ) : (

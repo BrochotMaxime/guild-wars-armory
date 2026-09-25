@@ -95,6 +95,7 @@ function ArmorDetails({
           inventory={inventory}
           onInventoryChange={updateInventory}
           onCraftingToggle={toggleCrafting}
+          onMaterialClick={setSelectedMaterial}
         />
       )}
     </section>
