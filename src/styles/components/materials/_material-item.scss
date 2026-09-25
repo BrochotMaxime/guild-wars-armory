@@ -4,10 +4,10 @@
   display: grid;
   margin: 0;
   padding: 0;
-  list-style: none;
   overflow: hidden;
-  background-color: $color-surface;
-  border: 1px solid rgba($color-interface-border, 0.7);
+  list-style: none;
+  background-color: #050606;
+  border: 1px solid $color-interface-border;
   border-radius: $border-radius-sm;
 }
 
@@ -18,10 +18,10 @@
   gap: 0.375rem;
   min-width: 0;
   padding: 0.375rem;
-  color: $color-text;
-  background-color: $color-surface;
+  color: #ffffff;
+  background-color: #050606;
   border: 0;
-  border-bottom: 1px solid rgba($color-interface-border, 0.3);
+  border-bottom: 1px solid $color-interface-border;
   border-radius: 0;
 
   &:last-child {
@@ -30,57 +30,68 @@
 }
 
 .material-item__icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
   object-fit: contain;
   border-radius: 0;
 }
 
 .material-item__name {
   min-width: 0;
+  color: #ffffff;
   font-size: 0.75rem;
+  font-weight: 700;
   line-height: 1.2;
   overflow-wrap: anywhere;
 }
 
 .material-item__quantity {
+  color: #ffffff;
   font-size: 0.75rem;
+  font-weight: 700;
   white-space: nowrap;
 }
 
 .material-item__details {
-  min-height: 1.75rem;
-  padding: 0.3125rem 0.375rem;
-  color: $color-interface-dark;
+  min-height: auto;
+  padding: 0.25rem 0.5rem;
+  color: $color-text;
   font-size: 0.6875rem;
-  background-color: transparent;
-  border-color: rgba($color-interface-border, 0.85);
+  font-weight: 600;
+  line-height: 1.2;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-sm;
 
   &:hover {
     color: #050606;
     background-color: rgba($color-accent-gold, 0.35);
     border-color: $color-accent-gold;
   }
+
+  &:focus-visible {
+    outline: 0.1875rem solid $color-accent-gold;
+    outline-offset: 0.125rem;
+  }
 }
 
 @media (min-width: $breakpoint-tablet) {
   .material-item {
     gap: $spacing-xs;
-    padding: 0.5rem;
+    padding: 0.75rem;
   }
 
   .material-item__icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .material-item__name,
   .material-item__quantity {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
 
   .material-item__details {
-    min-height: 2rem;
     padding: 0.375rem 0.625rem;
     font-size: 0.75rem;
   }

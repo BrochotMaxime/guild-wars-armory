@@ -12,6 +12,7 @@ function MaterialChecklist({
   inventory,
   onInventoryChange,
   onCraftingToggle,
+  onMaterialClick,
 }) {
   function getMaterialById(materialId) {
     return materials.find((material) => material.id === materialId);
@@ -77,6 +78,7 @@ function MaterialChecklist({
         row={row}
         onInventoryChange={onInventoryChange}
         onCraftingToggle={onCraftingToggle}
+        onMaterialClick={onMaterialClick}
       />
     );
   }
