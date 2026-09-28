@@ -11,6 +11,7 @@ import MaterialChecklist from "../materials/MaterialChecklist";
 function ArmorDetails({
   armor,
   materials,
+  craftingLocations,
   craftingRecipes,
   acquisitionMethods,
   onCheckMaterials,
@@ -34,9 +35,14 @@ function ArmorDetails({
     onCheckMaterials();
   }
 
-  const craftingLocationNames = armor.craftingLocations
-    .map((location) => location.name)
-    .join(" • ");
+  const armorCraftingLocations = armor.craftingLocationIds
+    .map((locationId) =>
+      craftingLocations.find((location) => location.id === locationId),
+    )
+    .filter(Boolean);
+
+  const locationLabel =
+    armorCraftingLocations.length === 1 ? "Location" : "Locations";
 
   const titleId = `armor-details-${armor.id}-title`;
 
@@ -56,11 +62,29 @@ function ArmorDetails({
           )}
         </div>
 
-        <p className="armor-details__location">
-          <span>Location</span>
+        <div className="armor-details__location">
+          <span>{locationLabel}</span>
 
-          <strong>{craftingLocationNames || "Unknown location"}</strong>
-        </p>
+          {armorCraftingLocations.length > 0 ? (
+            <ul className="armor-details__location-list">
+              {armorCraftingLocations.map((location) => (
+                <li key={location.id}>
+                  <a
+                    href={location.wikiUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${location.name} on Guild Wars Wiki — opens in a new tab`}
+                  >
+                    <span>{location.name}</span>
+                    <span aria-hidden="true"> ↗</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <strong>Unknown location</strong>
+          )}
+        </div>
       </header>
 
       <div className="armor-details__overview">

@@ -15,6 +15,7 @@ import WorkflowPanel from "./components/workflow/WorkflowPanel";
 import acquisitionMethods from "./data/acquisitionMethods";
 import armors from "./data/armors/armors";
 import campaigns from "./data/campaigns";
+import craftingLocations from "./data/craftingLocations";
 import craftingRecipes from "./data/craftingRecipes";
 import materials from "./data/materials";
 import professions from "./data/professions";
@@ -240,6 +241,7 @@ function App() {
               key={selectedArmor.id}
               armor={selectedArmor}
               materials={allMaterials}
+              craftingLocations={craftingLocations}
               craftingRecipes={craftingRecipes}
               acquisitionMethods={acquisitionMethods}
               onCheckMaterials={() => scrollToElement("material-checklist")}
