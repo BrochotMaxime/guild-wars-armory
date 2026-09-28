@@ -465,4 +465,24 @@ describe("App workflow", () => {
 
     expect(wikiLink).toHaveAttribute("target", "_blank");
   });
+
+  it("provides accessible Wiki links for armor crafting locations", async () => {
+    const user = userEvent.setup();
+
+    render(<App />);
+
+    await selectDeldrimorArmor(user);
+
+    const locationLink = screen.getByRole("link", {
+      name: /view central transfer chamber on guild wars wiki.*opens in a new tab/i,
+    });
+
+    expect(locationLink).toBeVisible();
+    expect(locationLink).toHaveAttribute(
+      "href",
+      "https://wiki.guildwars.com/wiki/Central_Transfer_Chamber",
+    );
+    expect(locationLink).toHaveAttribute("target", "_blank");
+    expect(locationLink).toHaveAttribute("rel", "noopener noreferrer");
+  });
 });
