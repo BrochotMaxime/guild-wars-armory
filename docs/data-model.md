@@ -35,7 +35,7 @@ Represents an armor set associated with a profession and campaign.
 - `name` — armor name;
 - `professionId` — identifier of the associated profession;
 - `campaignId` — identifier of the campaign under which the armor is classified;
-- `craftingLocations` — locations where the maximum-stat armor can be crafted;
+- `craftingLocationIds` — identifiers of the locations where the maximum-stat armor can be crafted;
 - `pieces` — armor slots included in the set;
 - `prestige` — whether the armor is a prestige armor set;
 - `images.male` — male armor preview;
@@ -43,11 +43,6 @@ Represents an armor set associated with a profession and campaign.
 - `cost.gold` — total required gold;
 - `cost.materials` — required materials and quantities;
 - `wikiUrl` — optional Guild Wars Wiki reference.
-
-Each crafting location contains:
-
-- `name` — location name;
-- `campaignId` — identifier of the campaign containing the location.
 
 Each material requirement in `cost.materials` contains:
 
@@ -67,6 +62,21 @@ Not every armor set contains all five pieces. The `pieces` array only contains t
 Armor costs represent the total cost of all available pieces with maximum armor statistics.
 
 The campaign used to classify an armor and the campaign containing its crafting location may differ. For example, an armor classified under Prophecies may have its maximum-stat version crafted at a location in Factions.
+
+## Crafting location
+
+Represents a location associated with armor or material crafting.
+
+- `id` — unique identifier;
+- `name` — location name;
+- `campaignId` — identifier of the campaign containing the location;
+- `wikiUrl` — Guild Wars Wiki reference.
+
+Crafting locations are centralized so that armor sets and artisans can reference the same location without duplicating its name, campaign, or Wiki URL.
+
+An armor references one or more locations through `craftingLocationIds`.
+
+An artisan references one location through `locationId`.
 
 ## Material
 
@@ -102,31 +112,57 @@ Represents a way of obtaining a material.
 - `name` — acquisition method name;
 - `availableInMelandrusAccord` — whether the method is available in Melandru's Accord.
 
+## Artisan
+
+Represents an artisan who can craft one or more materials.
+
+- `id` — unique identifier;
+- `name` — artisan name;
+- `locationId` — identifier of the artisan's location;
+- `craftedMaterialIds` — identifiers of the materials the artisan can craft;
+- `wikiUrl` — Guild Wars Wiki reference.
+
+The artisan's campaign is determined from the crafting location referenced by `locationId`.
+
+Crafting recipes do not store artisan identifiers. The application finds the relevant artisans by checking which records contain the recipe's `outputMaterialId` in `craftedMaterialIds`.
+
+This avoids maintaining the same relationship in both crafting recipes and artisan records.
+
 ## Relationships
 
 The main relationships between the models are:
 
 ```text
-Profession ─────┐
-                ├── Armor ──→ Material
-Campaign ───────┘                │
-                                 ├──→ Acquisition method
-                                 │
-                                 └──→ Crafting recipe
-                                            │
-                                            └──→ Ingredient material
+Profession ──→ Armor ←── Campaign
+                 │
+                 ├──→ Material
+                 │
+                 └──→ Crafting location ←── Artisan
+                              │                 │
+                              ↓                 └──→ Material
+                          Campaign
+
+Material ──→ Acquisition method
+
+Crafting recipe
+     ├──→ Output material
+     └──→ Ingredient materials
 ```
 
 - An armor belongs to one profession.
 - An armor is classified under one campaign.
-- An armor has one or more crafting locations.
-- Each crafting location belongs to a campaign.
+- An armor references one or more crafting locations.
+- A crafting location belongs to one campaign.
+- A crafting location may be referenced by multiple armors or artisans.
 - An armor contains one or more available armor pieces.
 - An armor requires one or more materials.
 - A material can have one or more acquisition methods.
 - A material may have a crafting recipe.
 - A crafting recipe produces a material from one or more ingredient materials.
 - An ingredient material may itself have a crafting recipe.
+- An artisan is associated with one crafting location.
+- An artisan can craft one or more materials.
+- A craftable material may be offered by multiple artisans.
 
 ## Material types
 
@@ -157,6 +193,10 @@ Crafting requirements are calculated recursively. When a selected recipe require
 The player inventory is considered at each crafting level. Only the missing quantity of a material is used to calculate its crafting requirements.
 
 This data-driven structure supports recursive crafting calculations without introducing material-specific conditions into the application.
+
+Artisan references are independent from crafting calculations. They provide acquisition information for recipe output materials without affecting ingredient quantities or gold calculations.
+
+Artisans are resolved from `craftedMaterialIds` and grouped in the interface according to the campaign of their referenced crafting location.
 
 ## Runtime planning state
 

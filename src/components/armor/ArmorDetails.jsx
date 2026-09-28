@@ -11,6 +11,8 @@ import MaterialChecklist from "../materials/MaterialChecklist";
 function ArmorDetails({
   armor,
   materials,
+  artisans,
+  campaigns,
   craftingLocations,
   craftingRecipes,
   acquisitionMethods,
@@ -102,6 +104,9 @@ function ArmorDetails({
         <MaterialDetails
           material={selectedMaterial}
           materials={materials}
+          artisans={artisans}
+          campaigns={campaigns}
+          craftingLocations={craftingLocations}
           acquisitionMethods={acquisitionMethods}
           craftingRecipes={craftingRecipes}
           onClose={() => setSelectedMaterial(null)}

@@ -1,10 +1,14 @@
 import { useEffect, useRef } from "react";
 
+import MaterialArtisanList from "./MaterialArtisanList";
 import MaterialCraftingRecipe from "./MaterialCraftingRecipe";
 
 function MaterialDetails({
   material,
   materials,
+  artisans,
+  campaigns,
+  craftingLocations,
   acquisitionMethods,
   craftingRecipes,
   onClose,
@@ -123,11 +127,22 @@ function MaterialDetails({
                     </span>
                   )}
 
-                  {methodId === "artisan" && craftingRecipe && (
-                    <MaterialCraftingRecipe
-                      recipe={craftingRecipe}
-                      materials={materials}
-                    />
+                  {methodId === "artisan" && (
+                    <>
+                      {craftingRecipe && (
+                        <MaterialCraftingRecipe
+                          recipe={craftingRecipe}
+                          materials={materials}
+                        />
+                      )}
+
+                      <MaterialArtisanList
+                        material={material}
+                        artisans={artisans}
+                        campaigns={campaigns}
+                        craftingLocations={craftingLocations}
+                      />
+                    </>
                   )}
                 </li>
               );

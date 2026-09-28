@@ -12,8 +12,9 @@ import ProfessionSelector from "./components/selectors/ProfessionSelector";
 
 import WorkflowPanel from "./components/workflow/WorkflowPanel";
 
-import acquisitionMethods from "./data/acquisitionMethods";
 import armors from "./data/armors/armors";
+import acquisitionMethods from "./data/acquisitionMethods";
+import artisans from "./data/artisans";
 import campaigns from "./data/campaigns";
 import craftingLocations from "./data/craftingLocations";
 import craftingRecipes from "./data/craftingRecipes";
@@ -241,6 +242,8 @@ function App() {
               key={selectedArmor.id}
               armor={selectedArmor}
               materials={allMaterials}
+              artisans={artisans}
+              campaigns={campaigns}
               craftingLocations={craftingLocations}
               craftingRecipes={craftingRecipes}
               acquisitionMethods={acquisitionMethods}
