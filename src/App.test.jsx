@@ -485,4 +485,63 @@ describe("App workflow", () => {
     expect(locationLink).toHaveAttribute("target", "_blank");
     expect(locationLink).toHaveAttribute("rel", "noopener noreferrer");
   });
+
+  it("displays material artisans grouped by campaign", async () => {
+    const user = userEvent.setup();
+
+    render(<App />);
+
+    await selectDeldrimorArmor(user);
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /view details for deldrimor steel ingot/i,
+      }),
+    );
+
+    const dialog = screen.getByRole("dialog", {
+      name: "Deldrimor Steel Ingot",
+    });
+
+    const artisanToggle = within(dialog).getByText("View 5 artisans");
+    const artisanDetails = artisanToggle.closest("details");
+
+    expect(artisanDetails).not.toHaveAttribute("open");
+
+    await user.click(artisanToggle);
+
+    expect(artisanDetails).toHaveAttribute("open");
+
+    expect(
+      within(dialog).getByRole("heading", {
+        name: "Prophecies",
+      }),
+    ).toBeVisible();
+
+    expect(
+      within(dialog).getByRole("heading", {
+        name: "Eye of the North",
+      }),
+    ).toBeVisible();
+
+    const artisanLink = within(dialog).getByRole("link", {
+      name: /view artisan orpah on guild wars wiki.*opens in a new tab/i,
+    });
+
+    expect(artisanLink).toHaveAttribute(
+      "href",
+      "https://wiki.guildwars.com/wiki/Artisan_Orpah",
+    );
+    expect(artisanLink).toHaveAttribute("target", "_blank");
+    expect(artisanLink).toHaveAttribute("rel", "noopener noreferrer");
+
+    const locationLink = within(dialog).getByRole("link", {
+      name: /view tangle root on guild wars wiki.*opens in a new tab/i,
+    });
+
+    expect(locationLink).toHaveAttribute(
+      "href",
+      "https://wiki.guildwars.com/wiki/Tangle_Root",
+    );
+  });
 });
