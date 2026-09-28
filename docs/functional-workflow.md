@@ -57,11 +57,15 @@ Selecting an armor displays:
 
 - the armor name;
 - its prestige status when applicable;
-- its crafting locations;
+- its crafting locations with direct Guild Wars Wiki links;
 - male and female previews;
 - its total gold cost;
 - its required common materials;
 - its required rare materials.
+
+Armor crafting locations are resolved from centralized location data.
+
+Each location link opens the corresponding Guild Wars Wiki page in a new browser tab and includes an accessible label describing this behavior.
 
 On smaller screens, users can switch between the male and female previews. Both previews are displayed together on larger screens.
 
@@ -183,13 +187,27 @@ Possible acquisition methods include:
 
 When an acquisition method is unavailable in Melandru's Accord, the modal displays a warning.
 
-If an artisan recipe is available, the modal also displays:
+If an artisan recipe is available, the modal displays:
 
 - the required ingredient materials;
 - their quantities;
-- the crafting gold cost.
+- the crafting gold cost;
+- the artisans capable of crafting the material;
+- each artisan's crafting location.
 
-A Guild Wars Wiki link opens additional information about the selected material in a new browser tab.
+Artisan references are displayed inside a collapsible native details element to prevent long artisan lists from dominating the modal.
+
+When expanded, artisans are grouped by the campaign containing their crafting location.
+
+Each artisan entry provides:
+
+- an external link to the artisan's Guild Wars Wiki page;
+- the artisan's crafting location;
+- an external link to the location's Guild Wars Wiki page.
+
+The material itself also provides a Guild Wars Wiki link.
+
+All external Wiki links open in a new browser tab and include accessible labels indicating this behavior.
 
 The modal can be closed with:
 
@@ -197,7 +215,7 @@ The modal can be closed with:
 - the `Escape` key;
 - a click on the backdrop.
 
-Keyboard focus remains inside the native modal while it is open.
+Keyboard focus remains inside the native modal while it is open. When the modal closes, focus returns to the control that opened it.
 
 ## Navigation
 
@@ -248,6 +266,9 @@ The application provides:
 - semantic headings and regions;
 - accessible material inventory labels;
 - accessible table headings;
-- reduced-motion support.
+- reduced-motion support;
+- keyboard-accessible artisan disclosure controls;
+- accessible labels for external Wiki links;
+- semantic grouping of artisans by campaign.
 
 The skip link moves focus without leaving a persistent URL fragment. Reloading the application returns users to the initial workflow state.
