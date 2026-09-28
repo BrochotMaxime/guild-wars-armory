@@ -4,12 +4,7 @@ const monkArmors = [
     name: "Ascalon Armor",
     professionId: "monk",
     campaignId: "prophecies",
-    craftingLocations: [
-      {
-        name: "Kaineng Center",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["kaineng-center"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -36,12 +31,7 @@ const monkArmors = [
     name: "Krytan Armor",
     professionId: "monk",
     campaignId: "prophecies",
-    craftingLocations: [
-      {
-        name: "Bukdek Byway",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["bukdek-byway"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -68,20 +58,7 @@ const monkArmors = [
     name: "Tyrian Armor",
     professionId: "monk",
     campaignId: "prophecies",
-    craftingLocations: [
-      {
-        name: "Droknar's Forge",
-        campaignId: "prophecies",
-      },
-      {
-        name: "Kaineng Center",
-        campaignId: "factions",
-      },
-      {
-        name: "Boreal Station",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["droknars-forge", "kaineng-center", "boreal-station"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -108,12 +85,7 @@ const monkArmors = [
     name: "Woven Armor",
     professionId: "monk",
     campaignId: "prophecies",
-    craftingLocations: [
-      {
-        name: "Droknar's Forge",
-        campaignId: "prophecies",
-      },
-    ],
+    craftingLocationIds: ["droknars-forge"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -140,12 +112,7 @@ const monkArmors = [
     name: "Censor Armor",
     professionId: "monk",
     campaignId: "prophecies",
-    craftingLocations: [
-      {
-        name: "Droknar's Forge",
-        campaignId: "prophecies",
-      },
-    ],
+    craftingLocationIds: ["droknars-forge"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -172,12 +139,7 @@ const monkArmors = [
     name: "Sacred Armor",
     professionId: "monk",
     campaignId: "prophecies",
-    craftingLocations: [
-      {
-        name: "Droknar's Forge",
-        campaignId: "prophecies",
-      },
-    ],
+    craftingLocationIds: ["droknars-forge"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -204,12 +166,7 @@ const monkArmors = [
     name: "Dragon Armor",
     professionId: "monk",
     campaignId: "prophecies",
-    craftingLocations: [
-      {
-        name: "Droknar's Forge",
-        campaignId: "prophecies",
-      },
-    ],
+    craftingLocationIds: ["droknars-forge"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -236,12 +193,7 @@ const monkArmors = [
     name: "Star Armor",
     professionId: "monk",
     campaignId: "prophecies",
-    craftingLocations: [
-      {
-        name: "Droknar's Forge",
-        campaignId: "prophecies",
-      },
-    ],
+    craftingLocationIds: ["droknars-forge"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -268,12 +220,7 @@ const monkArmors = [
     name: "Elite Woven Armor",
     professionId: "monk",
     campaignId: "prophecies",
-    craftingLocations: [
-      {
-        name: "The Granite Citadel",
-        campaignId: "prophecies",
-      },
-    ],
+    craftingLocationIds: ["the-granite-citadel"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -300,12 +247,7 @@ const monkArmors = [
     name: "Elite Judge Armor",
     professionId: "monk",
     campaignId: "prophecies",
-    craftingLocations: [
-      {
-        name: "The Granite Citadel",
-        campaignId: "prophecies",
-      },
-    ],
+    craftingLocationIds: ["the-granite-citadel"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -332,12 +274,7 @@ const monkArmors = [
     name: "Elite Saintly Armor",
     professionId: "monk",
     campaignId: "prophecies",
-    craftingLocations: [
-      {
-        name: "Marhan's Grotto",
-        campaignId: "prophecies",
-      },
-    ],
+    craftingLocationIds: ["marhans-grotto"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -364,12 +301,7 @@ const monkArmors = [
     name: "Flowing Armor",
     professionId: "monk",
     campaignId: "prophecies",
-    craftingLocations: [
-      {
-        name: "The Granite Citadel",
-        campaignId: "prophecies",
-      },
-    ],
+    craftingLocationIds: ["the-granite-citadel"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -392,16 +324,11 @@ const monkArmors = [
     wikiUrl: "https://wiki.guildwars.com/wiki/Monk_Flowing_armor",
   },
   {
-    id: "monk-Labyrinthine-armor",
+    id: "monk-labyrinthine-armor",
     name: "Labyrinthine Armor",
     professionId: "monk",
     campaignId: "prophecies",
-    craftingLocations: [
-      {
-        name: "Marhan's Grotto",
-        campaignId: "prophecies",
-      },
-    ],
+    craftingLocationIds: ["marhans-grotto"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -429,12 +356,7 @@ const monkArmors = [
     name: "Shing Jea Armor",
     professionId: "monk",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Kaineng Center",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["kaineng-center"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -469,12 +391,7 @@ const monkArmors = [
     name: "Canthan Armor",
     professionId: "monk",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Kaineng Center",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["kaineng-center"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -509,12 +426,7 @@ const monkArmors = [
     name: "Kurzick Armor",
     professionId: "monk",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "House zu Heltzer",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["house-zu-heltzer"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -553,12 +465,7 @@ const monkArmors = [
     name: "Luxon Armor",
     professionId: "monk",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Cavalon",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["cavalon"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -593,12 +500,7 @@ const monkArmors = [
     name: "Elite Canthan Armor",
     professionId: "monk",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Divine Path",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["divine-path"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -633,12 +535,7 @@ const monkArmors = [
     name: "Elite Kurzick Armor",
     professionId: "monk",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Vasburg Armory",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["vasburg-armory"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -677,12 +574,7 @@ const monkArmors = [
     name: "Elite Luxon Armor",
     professionId: "monk",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Leviathan Pits",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["leviathan-pits"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -718,16 +610,7 @@ const monkArmors = [
     name: "Istani Armor",
     professionId: "monk",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Consulate Docks",
-        campaignId: "nightfall",
-      },
-      {
-        name: "Command Post",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["consulate-docks", "command-post"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -762,16 +645,7 @@ const monkArmors = [
     name: "Sunspear Armor",
     professionId: "monk",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Consulate Docks",
-        campaignId: "nightfall",
-      },
-      {
-        name: "Command Post",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["consulate-docks", "command-post"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -806,12 +680,7 @@ const monkArmors = [
     name: "Elite Sunspear Armor",
     professionId: "monk",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Command Post",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["command-post"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -846,12 +715,7 @@ const monkArmors = [
     name: "Vabbian Armor",
     professionId: "monk",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "The Kodash Bazaar",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["the-kodash-bazaar"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -894,12 +758,7 @@ const monkArmors = [
     name: "Ancient Armor",
     professionId: "monk",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Bone Palace",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["bone-palace"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -934,12 +793,7 @@ const monkArmors = [
     name: "Primeval Armor",
     professionId: "monk",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Throne of Secrets",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["throne-of-secrets"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -979,12 +833,7 @@ const monkArmors = [
     name: "Norn Armor",
     professionId: "monk",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Gunnar's Hold",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["gunnars-hold"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -1019,12 +868,7 @@ const monkArmors = [
     name: "Asuran Armor",
     professionId: "monk",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Rata Sum",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["rata-sum"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -1059,12 +903,7 @@ const monkArmors = [
     name: "Monument Armor",
     professionId: "monk",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Eye of the North",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["eye-of-the-north"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -1099,12 +938,7 @@ const monkArmors = [
     name: "Deldrimor Armor",
     professionId: "monk",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Central Transfer Chamber",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["central-transfer-chamber"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -1132,12 +966,7 @@ const monkArmors = [
     name: "Obsidian Armor",
     professionId: "monk",
     campaignId: "core",
-    craftingLocations: [
-      {
-        name: "Fissure of Woe",
-        campaignId: "core",
-      },
-    ],
+    craftingLocationIds: ["the-fissure-of-woe"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {

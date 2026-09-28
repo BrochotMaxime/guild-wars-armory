@@ -4,16 +4,7 @@ const paragonArmors = [
     name: "Istani Armor",
     professionId: "paragon",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Consulate Docks",
-        campaignId: "nightfall",
-      },
-      {
-        name: "Command Post",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["consulate-docks", "command-post"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -40,16 +31,7 @@ const paragonArmors = [
     name: "Sunspear Armor",
     professionId: "paragon",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Consulate Docks",
-        campaignId: "nightfall",
-      },
-      {
-        name: "Command Post",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["consulate-docks", "command-post"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -76,27 +58,12 @@ const paragonArmors = [
     name: "Elonian Armor",
     professionId: "paragon",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Consulate Docks",
-        campaignId: "nightfall",
-      },
-      {
-        name: "Command Post",
-        campaignId: "nightfall",
-      },
-      {
-        name: "Bone Palace",
-        campaignId: "nightfall",
-      },
-      {
-        name: "Throne of Secrets",
-        campaignId: "nightfall",
-      },
-      {
-        name: "Boreal Station",
-        campaignId: "eye-of-the-north",
-      },
+    craftingLocationIds: [
+      "consulate-docks",
+      "command-post",
+      "bone-palace",
+      "throne-of-secrets",
+      "boreal-station",
     ],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
@@ -128,12 +95,7 @@ const paragonArmors = [
     name: "Elite Sunspear Armor",
     professionId: "paragon",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Command Post",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["command-post"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -161,12 +123,7 @@ const paragonArmors = [
     name: "Vabbian Armor",
     professionId: "paragon",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "The Kodash Bazaar",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["the-kodash-bazaar"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -205,12 +162,7 @@ const paragonArmors = [
     name: "Ancient Armor",
     professionId: "paragon",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Command Post",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["bone-palace"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -237,12 +189,7 @@ const paragonArmors = [
     name: "Primeval Armor",
     professionId: "paragon",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Throne of Secrets",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["throne-of-secrets"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -270,12 +217,7 @@ const paragonArmors = [
     name: "Norn Armor",
     professionId: "paragon",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Gunnar's Hold",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["gunnars-hold"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -302,12 +244,7 @@ const paragonArmors = [
     name: "Asuran Armor",
     professionId: "paragon",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Rata Sum 	",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["rata-sum"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -334,12 +271,7 @@ const paragonArmors = [
     name: "Monument Armor",
     professionId: "paragon",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Eye of the North",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["eye-of-the-north"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -366,12 +298,7 @@ const paragonArmors = [
     name: "Deldrimor Armor",
     professionId: "paragon",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Central Transfer Chamber",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["central-transfer-chamber"],
     pieces: ["chest", "legs", "feet"],
     prestige: true,
     images: {
@@ -399,12 +326,7 @@ const paragonArmors = [
     name: "Obsidian Armor",
     professionId: "paragon",
     campaignId: "core",
-    craftingLocations: [
-      {
-        name: "Fissure of Woe",
-        campaignId: "core",
-      },
-    ],
+    craftingLocationIds: ["the-fissure-of-woe"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {

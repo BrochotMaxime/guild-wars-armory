@@ -1,0 +1,136 @@
+const craftingLocations = [
+  {
+    id: "droknars-forge",
+    name: "Droknar's Forge",
+    campaignId: "prophecies",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Droknar%27s_Forge",
+  },
+  {
+    id: "the-granite-citadel",
+    name: "The Granite Citadel",
+    campaignId: "prophecies",
+    wikiUrl: "https://wiki.guildwars.com/wiki/The_Granite_Citadel",
+  },
+  {
+    id: "marhans-grotto",
+    name: "Marhan's Grotto",
+    campaignId: "prophecies",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Marhan%27s_Grotto",
+  },
+  {
+    id: "kaineng-center",
+    name: "Kaineng Center",
+    campaignId: "factions",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Kaineng_Center",
+  },
+  {
+    id: "wajjun-bazaar",
+    name: "Wajjun Bazaar",
+    campaignId: "factions",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Wajjun_Bazaar",
+  },
+  {
+    id: "bukdek-byway",
+    name: "Bukdek Byway",
+    campaignId: "factions",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Bukdek_Byway",
+  },
+  {
+    id: "house-zu-heltzer",
+    name: "House zu Heltzer",
+    campaignId: "factions",
+    wikiUrl: "https://wiki.guildwars.com/wiki/House_zu_Heltzer",
+  },
+  {
+    id: "cavalon",
+    name: "Cavalon",
+    campaignId: "factions",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Cavalon",
+  },
+  {
+    id: "divine-path",
+    name: "Divine Path",
+    campaignId: "factions",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Divine_Path",
+  },
+  {
+    id: "vasburg-armory",
+    name: "Vasburg Armory",
+    campaignId: "factions",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Vasburg_Armory",
+  },
+  {
+    id: "leviathan-pits",
+    name: "Leviathan Pits",
+    campaignId: "factions",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Leviathan_Pits",
+  },
+  {
+    id: "consulate-docks",
+    name: "Consulate Docks",
+    campaignId: "nightfall",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Consulate_Docks",
+  },
+  {
+    id: "command-post",
+    name: "Command Post",
+    campaignId: "nightfall",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Command_Post",
+  },
+  {
+    id: "the-kodash-bazaar",
+    name: "The Kodash Bazaar",
+    campaignId: "nightfall",
+    wikiUrl: "https://wiki.guildwars.com/wiki/The_Kodash_Bazaar",
+  },
+  {
+    id: "bone-palace",
+    name: "Bone Palace",
+    campaignId: "nightfall",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Bone_Palace",
+  },
+  {
+    id: "throne-of-secrets",
+    name: "Throne of Secrets",
+    campaignId: "nightfall",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Throne_of_Secrets",
+  },
+  {
+    id: "boreal-station",
+    name: "Boreal Station",
+    campaignId: "eye-of-the-north",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Boreal_Station",
+  },
+  {
+    id: "gunnars-hold",
+    name: "Gunnar's Hold",
+    campaignId: "eye-of-the-north",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Gunnar%27s_Hold",
+  },
+  {
+    id: "rata-sum",
+    name: "Rata Sum",
+    campaignId: "eye-of-the-north",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Rata_Sum",
+  },
+  {
+    id: "eye-of-the-north",
+    name: "Eye of the North",
+    campaignId: "eye-of-the-north",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Eye_of_the_North_(outpost)",
+  },
+  {
+    id: "central-transfer-chamber",
+    name: "Central Transfer Chamber",
+    campaignId: "eye-of-the-north",
+    wikiUrl: "https://wiki.guildwars.com/wiki/Central_Transfer_Chamber",
+  },
+  {
+    id: "the-fissure-of-woe",
+    name: "The Fissure of Woe",
+    campaignId: "core",
+    wikiUrl: "https://wiki.guildwars.com/wiki/The_Fissure_of_Woe",
+  },
+];
+
+export default craftingLocations;

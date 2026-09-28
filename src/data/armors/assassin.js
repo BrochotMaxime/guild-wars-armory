@@ -4,12 +4,7 @@ const assassinArmors = [
     name: "Shing Jea Armor",
     professionId: "assassin",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Kaineng Center",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["kaineng-center"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -37,12 +32,7 @@ const assassinArmors = [
     name: "Seitung Armor",
     professionId: "assassin",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Kaineng Center",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["kaineng-center"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -69,16 +59,7 @@ const assassinArmors = [
     name: "Canthan Armor",
     professionId: "assassin",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Kaineng Center",
-        campaignId: "factions",
-      },
-      {
-        name: "Boreal Station",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["kaineng-center", "boreal-station"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -105,12 +86,7 @@ const assassinArmors = [
     name: "Exotic Armor",
     professionId: "assassin",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Wajjun Bazaar",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["wajjun-bazaar"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -137,12 +113,7 @@ const assassinArmors = [
     name: "Imperial Armor",
     professionId: "assassin",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Bukdek Byway",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["bukdek-byway"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -169,12 +140,7 @@ const assassinArmors = [
     name: "Kurzick Armor",
     professionId: "assassin",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "House zu Heltzer",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["house-zu-heltzer"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -205,12 +171,7 @@ const assassinArmors = [
     name: "Luxon Armor",
     professionId: "assassin",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Cavalon",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["cavalon"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -241,12 +202,7 @@ const assassinArmors = [
     name: "Elite Canthan Armor",
     professionId: "assassin",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Divine Path",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["divine-path"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -274,12 +230,7 @@ const assassinArmors = [
     name: "Elite Exotic Armor",
     professionId: "assassin",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Divine Path",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["divine-path"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -307,12 +258,7 @@ const assassinArmors = [
     name: "Elite Imperial Armor",
     professionId: "assassin",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Divine Path",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["divine-path"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -340,12 +286,7 @@ const assassinArmors = [
     name: "Elite Kurzick Armor",
     professionId: "assassin",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Vasburg Armory",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["vasburg-armory"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -377,12 +318,7 @@ const assassinArmors = [
     name: "Elite Luxon Armor",
     professionId: "assassin",
     campaignId: "factions",
-    craftingLocations: [
-      {
-        name: "Leviathan Pits",
-        campaignId: "factions",
-      },
-    ],
+    craftingLocationIds: ["leviathan-pits"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -415,12 +351,7 @@ const assassinArmors = [
     name: "Vabbian Armor",
     professionId: "assassin",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "The Kodash Bazaar",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["the-kodash-bazaar"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -455,12 +386,7 @@ const assassinArmors = [
     name: "Ancient Armor",
     professionId: "assassin",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Bone Palace",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["bone-palace"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -488,12 +414,7 @@ const assassinArmors = [
     name: "Norn Armor",
     professionId: "assassin",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Gunnar's Hold",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["gunnars-hold"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -520,12 +441,7 @@ const assassinArmors = [
     name: "Asuran Armor",
     professionId: "assassin",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Rata Sum",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["rata-sum"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -552,12 +468,7 @@ const assassinArmors = [
     name: "Monument Armor",
     professionId: "assassin",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Eye of the North",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["eye-of-the-north"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -584,12 +495,7 @@ const assassinArmors = [
     name: "Deldrimor Armor",
     professionId: "assassin",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Central Transfer Chamber",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["central-transfer-chamber"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -625,12 +531,7 @@ const assassinArmors = [
     name: "Obsidian Armor",
     professionId: "assassin",
     campaignId: "core",
-    craftingLocations: [
-      {
-        name: "The Fissure of Woe",
-        campaignId: "core",
-      },
-    ],
+    craftingLocationIds: ["the-fissure-of-woe"],
     pieces: ["chest", "hands", "legs", "feet"],
     prestige: true,
     images: {

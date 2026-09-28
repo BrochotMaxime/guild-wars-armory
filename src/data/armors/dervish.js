@@ -4,16 +4,7 @@ const dervishArmors = [
     name: "Istani Armor",
     professionId: "dervish",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Consulate Docks",
-        campaignId: "nightfall",
-      },
-      {
-        name: "Command Post",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["consulate-docks", "command-post"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -40,16 +31,7 @@ const dervishArmors = [
     name: "Sunspear Armor",
     professionId: "dervish",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Consulate Docks",
-        campaignId: "nightfall",
-      },
-      {
-        name: "Command Post",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["consulate-docks", "command-post"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -76,20 +58,7 @@ const dervishArmors = [
     name: "Elonian Armor",
     professionId: "dervish",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Consulate Docks",
-        campaignId: "nightfall",
-      },
-      {
-        name: "Command Post",
-        campaignId: "nightfall",
-      },
-      {
-        name: "Boreal Station",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["consulate-docks", "command-post", "boreal-station"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: false,
     images: {
@@ -116,12 +85,7 @@ const dervishArmors = [
     name: "Elite Sunspear Armor",
     professionId: "dervish",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Command Post",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["command-post"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -149,12 +113,7 @@ const dervishArmors = [
     name: "Vabbian Armor",
     professionId: "dervish",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "The Kodash Bazaar",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["the-kodash-bazaar"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -189,12 +148,7 @@ const dervishArmors = [
     name: "Ancient Armor",
     professionId: "dervish",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Bone Palace",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["bone-palace"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -221,12 +175,7 @@ const dervishArmors = [
     name: "Primeval Armor",
     professionId: "dervish",
     campaignId: "nightfall",
-    craftingLocations: [
-      {
-        name: "Throne of Secrets",
-        campaignId: "nightfall",
-      },
-    ],
+    craftingLocationIds: ["throne-of-secrets"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -254,12 +203,7 @@ const dervishArmors = [
     name: "Norn Armor",
     professionId: "dervish",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Gunnar's Hold",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["gunnars-hold"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -286,12 +230,7 @@ const dervishArmors = [
     name: "Asuran Armor",
     professionId: "dervish",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Rata Sum",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["rata-sum"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -318,12 +257,7 @@ const dervishArmors = [
     name: "Monument Armor",
     professionId: "dervish",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Eye of the North",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["eye-of-the-north"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
@@ -350,12 +284,7 @@ const dervishArmors = [
     name: "Deldrimor Armor",
     professionId: "dervish",
     campaignId: "eye-of-the-north",
-    craftingLocations: [
-      {
-        name: "Central Transfer Chamber",
-        campaignId: "eye-of-the-north",
-      },
-    ],
+    craftingLocationIds: ["central-transfer-chamber"],
     pieces: ["chest", "legs", "feet"],
     prestige: true,
     images: {
@@ -391,12 +320,7 @@ const dervishArmors = [
     name: "Obsidian Armor",
     professionId: "dervish",
     campaignId: "core",
-    craftingLocations: [
-      {
-        name: "Fissure of Woe",
-        campaignId: "core",
-      },
-    ],
+    craftingLocationIds: ["the-fissure-of-woe"],
     pieces: ["head", "chest", "hands", "legs", "feet"],
     prestige: true,
     images: {
