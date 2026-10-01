@@ -12,6 +12,10 @@ function AppHeader() {
       <p className="app-header__tagline">
         Plan your armor. Track your materials.
       </p>
+
+      <p className="app-header__description">
+        An unofficial armor and material planner for Guild Wars Reforged.
+      </p>
     </header>
   );
 }

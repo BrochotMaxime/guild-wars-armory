@@ -2,7 +2,7 @@
 
 ## Project overview
 
-Guild Wars Armory is a lightweight web application designed to help Guild Wars players plan the acquisition of armor sets.
+Guild Wars Armory is a lightweight web application designed to help Guild Wars Reforged players plan the acquisition of armor sets.
 
 The application focuses on the following workflow:
 
@@ -24,14 +24,14 @@ However, players still need to determine manually:
 - which materials are still missing;
 - which common materials must be kept to craft missing rare materials;
 - how many crafting operations are required;
-- how much additional gold and material is required when crafting rare materials;
+- how much additional gold and which materials are required when crafting rare materials;
 - which acquisition methods remain relevant when playing Melandru's Accord.
 
 Guild Wars Armory simplifies this planning process by bringing these calculations together in a single workflow.
 
 ## Target users
 
-The primary target users are Guild Wars players who want to prepare the acquisition of an armor set.
+The primary target users are Guild Wars Reforged players who want to prepare the acquisition of an armor set.
 
 The application is especially useful for players using Melandru's Accord, where access to material traders is restricted and materials must often be obtained through salvage or crafting.
 
@@ -49,7 +49,7 @@ The first version allows users to:
 - select a campaign;
 - browse the corresponding armor sets;
 - view male and female armor previews;
-- view armor crafting locations;
+- view armor crafting locations and access their Guild Wars Wiki pages;
 - view the total gold and material requirements;
 - enter the materials they currently own;
 - calculate missing materials;
@@ -58,7 +58,7 @@ The first version allows users to:
 - calculate additional crafting costs;
 - view relevant acquisition methods;
 - identify acquisition methods unavailable in Melandru's Accord;
-- access Guild Wars Wiki links for additional material information;
+- access Guild Wars Wiki links for armor sets, materials, crafting locations, and artisans;
 - navigate backward through the profession, campaign, and armor selections;
 - reset dependent selections when an earlier choice changes;
 - complete the main workflow using keyboard navigation;

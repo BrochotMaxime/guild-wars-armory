@@ -29,3 +29,11 @@
   line-height: 1.4;
   text-shadow: 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.9);
 }
+
+.app-header__description {
+  max-width: 38rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(0.75rem, 1.75vw, 0.875rem);
+  line-height: 1.5;
+  text-shadow: 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.9);
+}

@@ -2,7 +2,7 @@
 
 > Plan your armor. Track your materials.
 
-Guild Wars Armory is an unofficial, fan-made planning application for Guild Wars armor sets. It helps players explore available armor, review crafting requirements, track owned materials, and calculate what they still need.
+Guild Wars Armory is an unofficial, fan-made armor and material planning application for Guild Wars Reforged. It helps players explore armor sets, review crafting requirements, track owned materials, and calculate what they still need.
 
 ## Live application
 
@@ -170,15 +170,15 @@ Additional project documentation is available in the [`docs/`](docs/) directory:
 
 ## Project status
 
-Guild Wars Armory V1 is complete and deployed in production.
+Guild Wars Armory V1 is deployed and available at [guildwarsarmory.com](https://guildwarsarmory.com/).
 
 The application uses local static data and focuses on the core armor-planning workflow. Future improvements and possible extensions are documented in the project roadmap.
 
 ## Attribution and external resources
 
-Armor, material, and acquisition information is based on Guild Wars resources and references from the [Guild Wars Wiki](https://wiki.guildwars.com/).
+Armor, material, crafting, and acquisition information is based on Guild Wars Reforged resources and references from the [Guild Wars Wiki](https://wiki.guildwars.com/).
 
-External links to Guild Wars Wiki are provided to help users find additional information about materials and acquisition methods.
+External links to Guild Wars Wiki are provided to help users find additional information about armor sets, materials, crafting locations, and acquisition methods.
 
 ## Disclaimer
 
